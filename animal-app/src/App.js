@@ -9,7 +9,7 @@ function App() {
     <main>
       <HeaderComponent />
       {/* <Switch> */}
-        {/* <Route exact path="/" component={MainComponent} />  */}
+        <Route exact path="/" component={MainComponent} /> 
         {/* <Route exact path='/login' component={Login} />
         <Route exact path='/dogs' component={DogContainer} />
         <Route component={My404} /> */} */}
