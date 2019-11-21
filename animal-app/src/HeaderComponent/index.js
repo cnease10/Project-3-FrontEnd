@@ -15,10 +15,10 @@ const HeaderComponent = () => {
                 <div class="header1">
             <List>
                 <List.Item>
-                    <Link to='/'>Home</Link> 
+                    Home
                 </List.Item>
                 <List.Item>
-                    <Link to="/shelters">Shelters</Link>
+                   Shelters
                 </List.Item>
             </List>
             </div>
