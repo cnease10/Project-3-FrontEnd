@@ -5,15 +5,18 @@ import HomeComponent from '../HomeComponent';
 import ShelterList from '../ShelterList'
 import AddAnimal from '../AddAnimalForm'
 import EditAnimal from '../EditAnimalForm'
+import ShelterShow from '../ShelterShow';
 
 class MainComponent extends Component {
     constructor(props) {
         super(props);
 
         this.state ={
-            showModal: false,
+            //bring in shelters from database & stick here
             shelters: [],
+            //bring in animals from database & stick here
             animals: [],
+            
             animalEdit: {
                 name: '',
                 breed: '',
@@ -22,12 +25,20 @@ class MainComponent extends Component {
                 gender: '',
                 photo: '',
                 description: ''
-            }
+            },
+            shelterpage: false,
+            newshelter: [],
+            //admin page
+            addpage: false,
+            showModal: false,
+            showdelete: false
+            
         }
     }
     componentDidMount() {
         this.getShelters();
         this.getAnimals();
+        // this.showReal();
     }
     
     //SHELTER CODE
@@ -39,7 +50,7 @@ class MainComponent extends Component {
                method: 'GET' 
             });
             const parsedShelters = await shelters.json();
-            console.log(parsedShelters);
+            // console.log(parsedShelters);
             this.setState({
                 shelters: parsedShelters.data
             })
@@ -59,7 +70,7 @@ class MainComponent extends Component {
                 method: 'GET'
             });
             const parsedAnimals = await animals.json();
-            console.log(parsedAnimals)
+            // console.log(parsedAnimals)
             this.setState({
                 animals: parsedAnimals.data
             })
@@ -137,8 +148,8 @@ class MainComponent extends Component {
             console.log(err)
         }
     }
-    //NOT WORKING 
-    // //DELETE ROUTE
+    
+    //DELETE ROUTE
     deleteAnimal = async (animalId) => {
         console.log(animalId)
         const deleteResponse = await fetch(process.env.REACT_APP_API_URL +'/api/v1/animals/' + animalId,  {
@@ -153,15 +164,59 @@ class MainComponent extends Component {
             alert('there is an issue');
         }
     }
+    //INDIE SHELTER SHOW ROUTE
+    shelterShow = async(shelterid) => {
+        const shelterResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelterid, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const parsedResponse = await shelterResponse.json();
+       
+        const newResponse = parsedResponse.data
+       
+        console.log(newResponse)
+        this.setState({
+            shelterpage: true,
+            // shelters: this.state.shelters.filter((shelter) => shelter.id === shelterid).data
+            newshelter: newResponse
+        })
+    }
+    
+   
+    // showShelterDetails = async(shelter) => {
+    //     const shelterResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelter ,{
+    //         method: 'GET',
+    //         credentials: 'include'
+    //     });
+    // }
+    // showReal = async(shelter) => {
+    //     const shelterResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelter ,{
+    //         method: 'GET',
+    //         credentials: 'include'
+    //     });
+        
+    //     const parsedResponse = await shelterResponse.json();
+    //     console.log(parsedResponse.data)
+    //     shelter = parsedResponse.data
+    //     console.log(shelter)
+    //     this.setState({
+    //         shelters: this.state.shelters.filter((shelter)=> shelter.id ===shelter).data
+    //     })
+    //    console.log(this.state.shelters)
+    // }
     render() {
+        console.log('rendering main component')
         return(
             <Grid columns={2} textAlign='center'>
                 <Grid.Row>
                    <HomeComponent/>  
                 </Grid.Row>
                <Grid.Row>
-                   <ShelterList  shelters={this.state.shelters} />
+                   <ShelterList shelterShow={this.shelterShow} shelters={this.state.shelters}  />
                </Grid.Row>
+               
+                   <ShelterShow selectShelter={this.state.newshelter}/>
+              
                 <Grid.Row>
                     <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>
                 </Grid.Row>
