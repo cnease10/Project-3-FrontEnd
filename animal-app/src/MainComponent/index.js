@@ -141,7 +141,7 @@ class MainComponent extends Component {
     // //DELETE ROUTE
     deleteAnimal = async (animalId) => {
         console.log(animalId)
-        const deleteResponse = await fetch('http://localhost:8000/api/v1/animals/' + animalId + '/', {
+        const deleteResponse = await fetch(process.env.REACT_APP_API_URL +'/api/v1/animals/' + animalId,  {
             method: 'DELETE',
             credentials: 'include'
         });
