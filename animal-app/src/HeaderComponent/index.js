@@ -4,6 +4,9 @@ import {Header, List} from 'semantic-ui-react'
 
 //functional / show only component that will be at the
 //top of every page
+
+//put that cute paw icon outside of this list and inside of the header
+
 const HeaderComponent = () => {
     return (
         <Header>
