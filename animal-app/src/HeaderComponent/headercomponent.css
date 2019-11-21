@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+
+/*.header1 {
+	background: #00334e;
+	font-size: 40px;
+	display: block;
+	padding: 20px, black;
+}*/
+
+a {
+  color: #f77754;
+  font-family: 'Alatsi', sans-serif;
+  font-size: 60px;
+
+
+}
+
+.header1 {
+	  flex-direction: row;
+	  display: inline-block;
+    vertical-align: text-top;
+    margin: 0 auto;
+
+}
