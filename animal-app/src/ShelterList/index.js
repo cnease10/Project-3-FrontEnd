@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import ShelterShow from '../ShelterShow';
 
 function ShelterList(props) {
     const shelters = props.shelters.map((shelter) => {
