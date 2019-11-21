@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Header, List} from 'semantic-ui-react'
+import './headercomponent.css'
+
 
 //functional / show only component that will be at the
 //top of every page
@@ -10,14 +12,16 @@ import {Header, List} from 'semantic-ui-react'
 const HeaderComponent = () => {
     return (
         <Header>
+                <div class="header1">
             <List>
                 <List.Item>
-                    <Link to='/'>Home</Link>
+                    <Link to='/'>Home</Link> 
                 </List.Item>
                 <List.Item>
                     <Link to="/shelters">Shelters</Link>
                 </List.Item>
             </List>
+            </div>
         </Header>
     )
 }
