@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import ShelterShow from '../ShelterShow';
 
+
 function ShelterList(props) {
     const shelters = props.shelters.map((shelter) => {
         return(
@@ -12,10 +13,11 @@ function ShelterList(props) {
             </div>
         )
     })
+   
     return (
         <div>
             <h3>Shelter List</h3>
-            <Link to='./animals' >{shelters}</Link>
+            <Link to='./sheltershow + {shelter.id}'  >{shelters}</Link>
         </div>
     )
 }

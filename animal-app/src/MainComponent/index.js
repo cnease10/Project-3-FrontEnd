@@ -137,8 +137,8 @@ class MainComponent extends Component {
             console.log(err)
         }
     }
-    //NOT WORKING 
-    // //DELETE ROUTE
+    
+    //DELETE ROUTE
     deleteAnimal = async (animalId) => {
         console.log(animalId)
         const deleteResponse = await fetch('http://localhost:8000/api/v1/animals/' + animalId + '/', {
@@ -153,6 +153,13 @@ class MainComponent extends Component {
             alert('there is an issue');
         }
     }
+    //INDIE SHELTER SHOW ROUTE
+    shelterShow = async(shelterid) => {
+        const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters' + shelterid, {
+            
+        })
+    }
+    
     render() {
         return(
             <Grid columns={2} textAlign='center'>

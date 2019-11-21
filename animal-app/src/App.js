@@ -5,6 +5,7 @@ import MainComponent from './MainComponent'
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import ShelterList from './ShelterList';
+import ShelterShow from './ShelterShow'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <HeaderComponent />
       {/* <Switch> */}
         <Route exact path="/" component={MainComponent} /> 
-        {/* <Route exact path ='/shelters' componet={ShelterList} /> */}
+        <Route exact path ='/sheltershow' componet={ShelterShow} />
         {/* <Route exact path='/home' component={HomeComponent} /> */}
         {/* <Route exact path='/login' component={Login} />
         <Route exact path='/dogs' component={DogContainer} />
