@@ -8,7 +8,7 @@ import {Route, Switch} from 'react-router-dom';
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
 import AdminLogin from './AdminLogin'
-import {Container} from 'semantic-ui-react'
+
 const pStyle = {
       backgroundColor: 'black',
                           }

@@ -214,33 +214,55 @@ class MainComponent extends Component {
             // shelters: this.state.shelters.filter((shelter) => shelter.id === shelterid).data
             newshelter: newResponse
         })
-        console.log(this.newshelter)
-        const animalResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
-            method: 'GET',
-            credentials: 'include'
-        });
-        const parsedResponse2 = await animalResponse.json();
-        const newResponse2 = parsedResponse2.data
-        console.log(newResponse2)
-        if (newResponse2.shelter === shelterid.id) {
-            this.setState({
-                shelteranimals: newResponse2
-            })
-        } else {
-            console.log('errrror bitch')
-        }
+        // console.log(this.newshelter)
+        // const animalResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
+        //     method: 'GET',
+        //     credentials: 'include'
+        // });
+        // const parsedResponse2 = await animalResponse.json();
+        // const newResponse2 = parsedResponse2.data
+        // console.log(newResponse2)
+        // if (newResponse2.shelter === shelterid.id) {
+        //     this.setState({
+        //         shelteranimals: newResponse2
+        //     })
+        // } else {
+        //     console.log('errrror bitch')
+        // }
     }
      //GET ONLY ANIMALS REALTED TO SHELTER
-     getShelterAnimals = async(shelterid) => {
-        try{
-            const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelterid, {
+    //  getShelterAnimals = async(shelterid) => {
+    //     try{
+    //         const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelterid, {
+    //             credentials: 'include',
+    //             method: 'GET'
+    //         });
+    //         const parsedResponse = shelter.json();
+    //         const newResponse = parsedResponse.data
+    //         const animalResponse = newResponse.shelter_specs
+    //         console.log(animalResponse)
+    //     } catch(err) {
+    //         console.log(err)
+    //     }
+    // }
+    getShelterAnimals = async(shelterid) => {
+        try {
+            const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
                 credentials: 'include',
                 method: 'GET'
             });
-            const parsedResponse = shelter.json();
-            const newResponse = parsedResponse.data
-            const animalResponse = newResponse.shelter_specs
-            console.log(animalResponse)
+            const parsedAnimals = await animals.json();
+            const newParsed = await parsedAnimals.data
+            const shelters = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/', {
+                credentials: 'include',
+                method: 'GET' 
+             });
+             const parsedShelters = await shelters.json();
+             const newShelterParsed = parsedShelters.data
+
+             console.log(newShelterParsed);
+            console.log(newParsed)
+           
         } catch(err) {
             console.log(err)
         }
