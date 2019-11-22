@@ -5,32 +5,23 @@ import MainComponent from './MainComponent'
 import './App.css';
 // import FooterComponent from './FooterComponent';
 import {Route, Switch} from 'react-router-dom';
-
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
 import AdminLogin from './AdminLogin'
 import {Container} from 'semantic-ui-react'
-
+const pStyle = {
+      backgroundColor: 'black',
+                          }
 function App() {
   return (
-    <Container>
-        <style>
-      
-      body {
-        background-color: #000000 !important;
-      }
-    
-    </style>
-    <main>
+    <main style={pStyle}>
       <Switch>
         <Route exact path ='/' component={MainComponent} />
         <Route exact path='/letmein' component={AdminLogin} />
       </Switch>
-      
-     
     </main>
-    <Container/>
-
+    )
+}
 export default App;
 
 // {/* <Switch>
