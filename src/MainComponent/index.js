@@ -9,6 +9,7 @@ import ShelterShow from '../ShelterShow';
 import FooterComponent from '../FooterComponent'
 import HeaderComponent from '../HeaderComponent'
 import { parse } from 'querystring';
+import { tsExpressionWithTypeArguments } from '@babel/types';
 
 class MainComponent extends Component {
     constructor(props) {
@@ -83,7 +84,10 @@ class MainComponent extends Component {
             // console.log(parsedShelters);
             this.setState({
                 shelters: parsedShelters.data,
-                shelterspage: true
+                shelterspage: true,
+                homepage: false,
+                shelterpage: false, 
+                animalspage: false
             })
             console.log('hitting route')
         } catch (err) {
@@ -105,7 +109,10 @@ class MainComponent extends Component {
             // console.log(parsedAnimals)
             this.setState({
                 animals: parsedAnimals.data,
-                animalspage: true
+                animalspage: true,
+                homepage: false,
+                shelterspage: false,
+                shelterpage: false,
             })
         } catch(err) {
             console.log(err)
@@ -126,7 +133,10 @@ class MainComponent extends Component {
             });
             const parsedResponse = await createdAnimalResponse.json();
             if (parsedResponse.status.code === 200) {
-                this.setState({animals: [...this.state.animals, parsedResponse.data]})
+                this.setState({
+                    animals: [...this.state.animals, parsedResponse.data],
+                    addpage: true
+                })
             } else {
                 alert('we have an error')
             }
@@ -192,7 +202,10 @@ class MainComponent extends Component {
         const deleteResponseParsed = await deleteResponse.json();
         console.log(deleteResponseParsed)
         if (deleteResponseParsed.status.code === 200) {
-            this.setState({animals: this.state.animals.filter((animal) => animal.id !== animalId)})
+            this.setState({
+                animals: this.state.animals.filter((animal) => animal.id !== animalId),
+                showdelete: true
+                })
         } else {
             alert('there is an issue');
         }
@@ -209,42 +222,14 @@ class MainComponent extends Component {
        
         console.log(newResponse)
         this.setState({
+            homepage: false,
             shelterpage: true,
             shelterspage: false,
-            // shelters: this.state.shelters.filter((shelter) => shelter.id === shelterid).data
+            animalspage: false,
             newshelter: newResponse
         })
-        // console.log(this.newshelter)
-        // const animalResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
-        //     method: 'GET',
-        //     credentials: 'include'
-        // });
-        // const parsedResponse2 = await animalResponse.json();
-        // const newResponse2 = parsedResponse2.data
-        // console.log(newResponse2)
-        // if (newResponse2.shelter === shelterid.id) {
-        //     this.setState({
-        //         shelteranimals: newResponse2
-        //     })
-        // } else {
-        //     console.log('errrror bitch')
-        // }
     }
      //GET ONLY ANIMALS REALTED TO SHELTER
-    //  getShelterAnimals = async(shelterid) => {
-    //     try{
-    //         const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelterid, {
-    //             credentials: 'include',
-    //             method: 'GET'
-    //         });
-    //         const parsedResponse = shelter.json();
-    //         const newResponse = parsedResponse.data
-    //         const animalResponse = newResponse.shelter_specs
-    //         console.log(animalResponse)
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
     getShelterAnimals = async(shelterid) => {
         try {
             const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
@@ -253,15 +238,20 @@ class MainComponent extends Component {
             });
             const parsedAnimals = await animals.json();
             const newParsed = await parsedAnimals.data
-            const shelters = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/', {
-                credentials: 'include',
-                method: 'GET' 
-             });
-             const parsedShelters = await shelters.json();
-             const newShelterParsed = parsedShelters.data
-
-             console.log(newShelterParsed);
+            
             console.log(newParsed)
+            this.setState({
+                animals: parsedAnimals.data,
+                homepage: false,
+                shelterspage: false,
+                animalspage: false,
+
+                
+            })
+            this.setState({
+                shelteranimals: this.state.animals.filter((animal) => animal.shelter === shelterid
+                )}) 
+            console.log(this.state.shelteranimals)
            
         } catch(err) {
             console.log(err)
@@ -276,7 +266,8 @@ class MainComponent extends Component {
 
             <div>
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
-            {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}
+            {this.state.homepage ? <HomeComponent/> : null}
+            {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
             {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
             {/* {this.state.adminlogged ? <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/> : null} */}
