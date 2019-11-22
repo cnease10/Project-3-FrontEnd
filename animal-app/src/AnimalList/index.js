@@ -42,7 +42,7 @@ function AnimalList(props) {
       //on the card of the dog
     return (
         <div>
-        <h3>Animal List</h3>
+        <h2>Animal List</h2>
             {animals}
         </div>
     )

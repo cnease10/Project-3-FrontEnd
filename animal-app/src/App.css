@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+  
 }
-
+.app-main{
+  background-color: "black";
+}
 .App-logo {
   height: 40vmin;
 }
@@ -20,3 +23,4 @@
 .App-link {
   color: #09d3ac;
 }
+

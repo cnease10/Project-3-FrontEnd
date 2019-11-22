@@ -251,6 +251,7 @@ class MainComponent extends Component {
         console.log('rendering main component')
         
         return(
+
             <div>
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}

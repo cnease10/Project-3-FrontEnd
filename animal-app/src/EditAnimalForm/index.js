@@ -1,15 +1,18 @@
 import React from 'react';
 import {Modal, Form, Button, Header} from 'semantic-ui-react';
+import './editanimal.css'
+
 
 const EditDog = (props) => {
     return(
         <Modal open={props.open}>
             <Header>Edit Animal</Header>
+            <div className="form">
             <Modal.Content>
                 <Form onSubmit={props.close}>
-                    Name:
+                    <Header as="h4">Name:</Header>
                     <Form.Input type='text' name='name' value={props.animalEdit.name } onChange={props.handleEdit} />
-                    Breed:
+                    <Header as="h4">Breed:</Header>
                     <Form.Input type='text' name='breed' value={props.animalEdit.breed } onChange={props.handleEdit} />
                     Shelter:
                     <Form.Input type='text' name='shelter' value={props.animalEdit.shelter } onChange={props.handleEdit} />
@@ -28,7 +31,10 @@ const EditDog = (props) => {
                     </Modal.Actions>
                 </Form>
             </Modal.Content>
-        </Modal>
+         </div>
+ </Modal>
+
+
     )
 }
 
