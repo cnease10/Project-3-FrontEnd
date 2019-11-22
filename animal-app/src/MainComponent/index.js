@@ -257,7 +257,7 @@ class MainComponent extends Component {
             {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
             {/* {this.state.adminlogged ? <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/> : null} */}
-            <AddAnimal addAnimal={this.addAnimal}/>
+            {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             <FooterComponent />  
             </div> 
         )
