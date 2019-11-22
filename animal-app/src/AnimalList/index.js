@@ -1,16 +1,39 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import {Button, Image} from 'semantic-ui-react'
+import {Button, Image, Card} from 'semantic-ui-react'
 
 function AnimalList(props) {
     const animals = props.animals.map((animal) => {
         return(
             <div>
-            <ul>
-                <li key={animal.id}> {animal.name} <br/> {animal.breed} <br/> {animal.age} <br/> {animal.description}<br/> {animal.gender} <br/> {animal.shelter} <br/> <Image src='{animal.photo}'/>  </li>
-                <Button onClick={() => props.openModal(animal)}>Edit Animal</Button>
-                <Button onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
-            </ul>
+                
+                <Card>
+                    <Image src={animal.photo} wrapped ui={false} />
+                    {/* <Card.Content>{animal.photo}</Card.Content> */}
+                    {/* <Card.Content>
+                    <img src={animal.photo} alt=""></img>
+                    </Card.Content> */}
+                    <Card.Content>
+                    <Card.Header>{animal.name}</Card.Header>
+                    <Card.Meta>Breed: {animal.breed}</Card.Meta>
+                    <Card.Description>
+                    {animal.description}
+                    </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                    Age: {animal.age} <br/>
+                    Gender: {animal.gender}
+                    </Card.Content>
+                    <Card.Content>
+                    <Button onClick={() => props.openModal(animal)}>Edit Animal</Button>
+                    <Button onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+                    </Card.Content>
+                    </Card>
+
+
+           
+                
+           
             </div>
         )
     })

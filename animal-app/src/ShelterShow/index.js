@@ -1,5 +1,5 @@
 import React from 'react'
-// import {Card, Button} from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 function ShelterShow(props) {
      const shelteraddress = props.new.address
@@ -32,6 +32,7 @@ function ShelterShow(props) {
             <h1>{sheltername}</h1>
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
+            <Button onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button>
         </div>
     )
    

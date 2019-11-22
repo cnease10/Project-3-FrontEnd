@@ -30,6 +30,7 @@ class MainComponent extends Component {
                 photo: '',
                 description: ''
             },
+            animalspage: false,
             shelterspage: false,
             shelterpage: false,
             newshelter: [],
@@ -48,6 +49,7 @@ class MainComponent extends Component {
         // this.getAnimals();
         // this.showReal();
         // this.shelterSee();
+        this.getShelterAnimals();
     }
     gethomepage = () => {
         this.setState({
@@ -57,17 +59,18 @@ class MainComponent extends Component {
             addpage: false,
             showModal: false,
             showdelete: false,
+            animalspage: false
         })
     }
-    getadminpage = () => {
-        this.setState({
-            adminlogged: true,
-            addpage: true,
-            showdelte: true,
-            showeditbutton: true
+    // getadminpage = () => {
+    //     this.setState({
+    //         adminlogged: true,
+    //         addpage: true,
+    //         showdelte: true,
+    //         showeditbutton: true
 
-        })
-    }
+    //     })
+    // }
     //SHELTER CODE
     //INDEX OF SHELTERS
     getShelters = async() => {
@@ -101,7 +104,8 @@ class MainComponent extends Component {
             const parsedAnimals = await animals.json();
             // console.log(parsedAnimals)
             this.setState({
-                animals: parsedAnimals.data
+                animals: parsedAnimals.data,
+                animalspage: true
             })
         } catch(err) {
             console.log(err)
@@ -227,17 +231,20 @@ class MainComponent extends Component {
         }
     }
      //GET ONLY ANIMALS REALTED TO SHELTER
-    //  getShelterAnimals = async(shelterid) => {
-    //     try{
-    //         const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/', {
-    //             credentials: 'include',
-    //             method: 'GET'
-    //         });
-    //         const 
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
+     getShelterAnimals = async(shelterid) => {
+        try{
+            const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelterid, {
+                credentials: 'include',
+                method: 'GET'
+            });
+            const parsedResponse = shelter.json();
+            const newResponse = parsedResponse.data
+            const animalResponse = newResponse.shelter_specs
+            console.log(animalResponse)
+        } catch(err) {
+            console.log(err)
+        }
+    }
 
   
     render() {
@@ -245,12 +252,13 @@ class MainComponent extends Component {
         
         return(
             <div>
-            <HeaderComponent shelter={this.getShelters} back={this.gethomepage}/>
-            {this.state.shelterspage ? <ShelterList shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}
-            {this.state.shelterpage ? <ShelterShow new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
-            
-
-            <FooterComponent admin={this.getadminpage}/>  
+            <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
+            {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}
+            {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
+            {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
+            {/* {this.state.adminlogged ? <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/> : null} */}
+            {/* <AddAnimal addAnimal={this.addAnimal}/> */}
+            <FooterComponent />  
             </div> 
         )
     }
