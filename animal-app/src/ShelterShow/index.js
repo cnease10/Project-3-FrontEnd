@@ -6,6 +6,14 @@ function ShelterShow(props) {
      const sheltercity = props.new.city
      const sheltername = props.new.name
      const shelterphone = props.new.phone
+    //  const shelterpets = props.animals
+    //  .map((animal) => {
+    //      return(
+    //          <ul>
+    //              <li>{animal}</li>
+    //          </ul>
+    //      )
+    //  })
     //  .map((shelter) => {
         //  return(
         // <div>
@@ -23,6 +31,7 @@ function ShelterShow(props) {
         <div>
             <h1>{sheltername}</h1>
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
+            {/* <section>{shelterpets}</section> */}
         </div>
     )
    
