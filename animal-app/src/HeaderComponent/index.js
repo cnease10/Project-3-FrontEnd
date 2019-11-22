@@ -19,6 +19,9 @@ const HeaderComponent = (props) => {
                 <List.Item>
                    <Button onClick={props.shelter}>Shelters</Button>
                 </List.Item>
+                <List.Item>
+                    <Button onClick={props.animals} >Animals</Button>
+                </List.Item>
             </List>
             </div>
         </Header>
