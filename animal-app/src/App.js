@@ -5,12 +5,22 @@ import MainComponent from './MainComponent'
 import './App.css';
 // import FooterComponent from './FooterComponent';
 import {Route, Switch} from 'react-router-dom';
+
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
 import AdminLogin from './AdminLogin'
+import {Container} from 'semantic-ui-react'
 
 function App() {
   return (
+    <Container>
+        <style>
+      
+      body {
+        background-color: #000000 !important;
+      }
+    
+    </style>
     <main>
       <Switch>
         <Route exact path ='/' component={MainComponent} />
@@ -19,8 +29,7 @@ function App() {
       
      
     </main>
-  );
-}
+    <Container/>
 
 export default App;
 

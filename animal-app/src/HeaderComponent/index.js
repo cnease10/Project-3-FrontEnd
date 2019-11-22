@@ -1,5 +1,10 @@
 import React from 'react'
+
 import {Header, List,Button} from 'semantic-ui-react'
+
+import {Link} from 'react-router-dom'
+import {Container   , List} from 'semantic-ui-react'
+
 import './headercomponent.css'
 
 
@@ -10,13 +15,14 @@ import './headercomponent.css'
 
 const HeaderComponent = (props) => {
     return (
+<Container textAlign='left' fluid>
         <Header>
                 <div class="header1">
-            <List>
-                <List.Item>
+            <List horizontal>
+                <List.Item className="homelink">
                     <Button onClick={props.back}>Home</Button>
                 </List.Item>
-                <List.Item>
+                <List.Item className="shelter">
                    <Button onClick={props.shelter}>Shelters</Button>
                 </List.Item>
                 <List.Item>
@@ -24,7 +30,7 @@ const HeaderComponent = (props) => {
                 </List.Item>
             </List>
             </div>
-        </Header>
+        
     )
 }
 
