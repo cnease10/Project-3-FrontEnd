@@ -4,16 +4,20 @@ import React from 'react';
 import MainComponent from './MainComponent'
 import './App.css';
 // import FooterComponent from './FooterComponent';
-// import {Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
+import AdminLogin from './AdminLogin'
 
 function App() {
   return (
     <main>
-      {/* <HeaderComponent /> */}
-      <MainComponent />
-      {/* <FooterComponent/> */}
+      <Switch>
+        <Route exact path ='/' component={MainComponent} />
+        <Route exact path='/letmein' component={AdminLogin} />
+      </Switch>
+      
+     
     </main>
   );
 }

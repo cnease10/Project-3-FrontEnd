@@ -8,6 +8,7 @@ import EditAnimal from '../EditAnimalForm'
 import ShelterShow from '../ShelterShow';
 import FooterComponent from '../FooterComponent'
 import HeaderComponent from '../HeaderComponent'
+import { parse } from 'querystring';
 
 class MainComponent extends Component {
     constructor(props) {
@@ -32,8 +33,11 @@ class MainComponent extends Component {
             shelterspage: false,
             shelterpage: false,
             newshelter: [],
+            shelteranimals: [],
             //admin page
+            adminlogged: false,
             addpage: false,
+            showeditbutton: false,
             showModal: false,
             showdelete: false
             
@@ -53,6 +57,15 @@ class MainComponent extends Component {
             addpage: false,
             showModal: false,
             showdelete: false,
+        })
+    }
+    getadminpage = () => {
+        this.setState({
+            adminlogged: true,
+            addpage: true,
+            showdelte: true,
+            showeditbutton: true
+
         })
     }
     //SHELTER CODE
@@ -94,7 +107,7 @@ class MainComponent extends Component {
             console.log(err)
         }
     }
-
+   
     //CREATE ROUTE
     addAnimal = async(e, animalFromForm) => {
         e.preventDefault();
@@ -198,7 +211,34 @@ class MainComponent extends Component {
             newshelter: newResponse
         })
         console.log(this.newshelter)
+        const animalResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const parsedResponse2 = await animalResponse.json();
+        const newResponse2 = parsedResponse2.data
+        console.log(newResponse2)
+        if (newResponse2.shelter === shelterid.id) {
+            this.setState({
+                shelteranimals: newResponse2
+            })
+        } else {
+            console.log('errrror bitch')
+        }
     }
+     //GET ONLY ANIMALS REALTED TO SHELTER
+    //  getShelterAnimals = async(shelterid) => {
+    //     try{
+    //         const shelter = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/', {
+    //             credentials: 'include',
+    //             method: 'GET'
+    //         });
+    //         const 
+    //     } catch(err) {
+    //         console.log(err)
+    //     }
+    // }
+
   
     render() {
         console.log('rendering main component')
@@ -207,10 +247,10 @@ class MainComponent extends Component {
             <div>
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage}/>
             {this.state.shelterspage ? <ShelterList shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}
-            {this.state.shelterpage ? <ShelterShow new={this.state.newshelter} /> : <HomeComponent />}
+            {this.state.shelterpage ? <ShelterShow new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             
 
-            <FooterComponent/>  
+            <FooterComponent admin={this.getadminpage}/>  
             </div> 
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
-import { Segment,} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+import { Segment, Button} from 'semantic-ui-react'
 
 
 //functional / show only component that will be at the
@@ -11,7 +11,7 @@ import { Segment,} from 'semantic-ui-react'
 const FooterComponent = () => {
     return (
         <Segment stacked>
-            Admin login
+            <Button><Link to="/letmein">Admin</Link></Button>
         </Segment>
     )
 }
