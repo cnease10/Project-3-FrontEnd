@@ -137,7 +137,7 @@ class MainComponent extends Component {
             console.log(err)
         }
     }
-    //NOT WORKING 
+    
     // //DELETE ROUTE
     deleteAnimal = async (animalId) => {
         console.log(animalId)
