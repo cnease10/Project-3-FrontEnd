@@ -4,6 +4,7 @@ import {Button} from 'semantic-ui-react'
 // import ShelterShow from '../ShelterShow';
 
 
+
 function ShelterList(props) {
     const shelters = props.shelters.map((shelter) => {
         return(

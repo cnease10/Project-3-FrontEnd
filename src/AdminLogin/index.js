@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Form, Label, Button, Message} from 'semantic-ui-react'
-
+import './adminlogin.css'
 
 class Login extends Component {
     constructor() {

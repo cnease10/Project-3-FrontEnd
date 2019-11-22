@@ -1,0 +1,6 @@
+.form {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 60px;
+    }
