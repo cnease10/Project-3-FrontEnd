@@ -6,12 +6,15 @@ import ShelterList from '../ShelterList'
 import AddAnimal from '../AddAnimalForm'
 import EditAnimal from '../EditAnimalForm'
 import ShelterShow from '../ShelterShow';
+import FooterComponent from '../FooterComponent'
+import HeaderComponent from '../HeaderComponent'
 
 class MainComponent extends Component {
     constructor(props) {
         super(props);
 
         this.state ={
+            homepage: true,
             //bring in shelters from database & stick here
             shelters: [],
             //bring in animals from database & stick here
@@ -26,6 +29,7 @@ class MainComponent extends Component {
                 photo: '',
                 description: ''
             },
+            shelterspage: false,
             shelterpage: false,
             newshelter: [],
             //admin page
@@ -36,11 +40,21 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        this.getShelters();
-        this.getAnimals();
+        // this.getShelters();
+        // this.getAnimals();
         // this.showReal();
+        // this.shelterSee();
     }
-    
+    gethomepage = () => {
+        this.setState({
+            homepage: true,
+            shelterspage: false,
+            shelterpage: false,
+            addpage: false,
+            showModal: false,
+            showdelete: false,
+        })
+    }
     //SHELTER CODE
     //INDEX OF SHELTERS
     getShelters = async() => {
@@ -52,8 +66,10 @@ class MainComponent extends Component {
             const parsedShelters = await shelters.json();
             // console.log(parsedShelters);
             this.setState({
-                shelters: parsedShelters.data
+                shelters: parsedShelters.data,
+                shelterspage: true
             })
+            console.log('hitting route')
         } catch (err) {
             console.log(err);
         }
@@ -177,60 +193,48 @@ class MainComponent extends Component {
         console.log(newResponse)
         this.setState({
             shelterpage: true,
+            shelterspage: false,
             // shelters: this.state.shelters.filter((shelter) => shelter.id === shelterid).data
             newshelter: newResponse
         })
+        console.log(this.newshelter)
     }
-    
-   
-    // showShelterDetails = async(shelter) => {
-    //     const shelterResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelter ,{
-    //         method: 'GET',
-    //         credentials: 'include'
-    //     });
-    // }
-    // showReal = async(shelter) => {
-    //     const shelterResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/shelters/' + shelter ,{
-    //         method: 'GET',
-    //         credentials: 'include'
-    //     });
-        
-    //     const parsedResponse = await shelterResponse.json();
-    //     console.log(parsedResponse.data)
-    //     shelter = parsedResponse.data
-    //     console.log(shelter)
-    //     this.setState({
-    //         shelters: this.state.shelters.filter((shelter)=> shelter.id ===shelter).data
-    //     })
-    //    console.log(this.state.shelters)
-    // }
+  
     render() {
         console.log('rendering main component')
+        
         return(
-            <Grid columns={2} textAlign='center'>
-                <Grid.Row>
-                   <HomeComponent/>  
-                </Grid.Row>
-               <Grid.Row>
-                   <ShelterList shelterShow={this.shelterShow} shelters={this.state.shelters}  />
-               </Grid.Row>
-               
-                   <ShelterShow selectShelter={this.state.newshelter}/>
-              
-                <Grid.Row>
-                    <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>
-                </Grid.Row>
-                <Grid.Row>
-                    <AddAnimal addAnimal={this.addAnimal}/>
-                </Grid.Row>
-                <Grid.Row>
-                    <EditAnimal handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit}
-                    open={this.state.showModal} />
-                </Grid.Row>
-            </Grid>
+            <div>
+            <HeaderComponent shelter={this.getShelters} back={this.gethomepage}/>
+            {this.state.shelterspage ? <ShelterList shelters={this.state.shelters} shelterShow={this.shelterShow} /> : <HomeComponent/>}
+            {this.state.shelterpage ? <ShelterShow new={this.state.newshelter} /> : <HomeComponent />}
             
+
+            <FooterComponent/>  
+            </div> 
         )
     }
 }
 
 export default MainComponent
+/// /* // <Grid columns={2} textAlign='center'>
+    //     <Grid.Row>
+    //        <HomeComponent/>  
+    //     </Grid.Row>
+    //    <Grid.Row>
+    //        <ShelterList shelterShow={this.shelterShow} shelters={this.state.shelters} shelterPage={this.state.shelterpage}  />
+    //    </Grid.Row>
+       
+    //        <ShelterShow selectShelter={this.state.newshelter}/>
+      
+    //     <Grid.Row>
+    //         <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>
+    //     </Grid.Row>
+    //     <Grid.Row>
+    //         <AddAnimal addAnimal={this.addAnimal}/>
+    //     </Grid.Row>
+    //     <Grid.Row>
+    //         <EditAnimal handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit}
+    //         open={this.state.showModal} />
+    //     </Grid.Row>
+    // </Grid> */}
