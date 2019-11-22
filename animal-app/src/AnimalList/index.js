@@ -8,7 +8,11 @@ function AnimalList(props) {
             <div>
                 
                 <Card>
-                    <Image src='{animal.photo}' wrapped ui={false} />
+                    <Image src={animal.photo} wrapped ui={false} />
+                    {/* <Card.Content>{animal.photo}</Card.Content> */}
+                    {/* <Card.Content>
+                    <img src={animal.photo} alt=""></img>
+                    </Card.Content> */}
                     <Card.Content>
                     <Card.Header>{animal.name}</Card.Header>
                     <Card.Meta>Breed: {animal.breed}</Card.Meta>
