@@ -1,11 +1,29 @@
 import React from 'react'
-import {Card, Button} from 'semantic-ui-react'
+// import {Card, Button} from 'semantic-ui-react'
 
 function ShelterShow(props) {
-    //  const shelter = props.newshelter
-    //    console.log('In ShelterShow shelter is:',  shelter)
+     const shelteraddress = props.new.address
+     const sheltercity = props.new.city
+     const sheltername = props.new.name
+     const shelterphone = props.new.phone
+    //  .map((shelter) => {
+        //  return(
+        // <div>
+        // <ul>
+        //     <li key={shelter.id}> {shelter.name} <br/> {shelter.address} <br/>  </li>
+            
+        // </ul>
+        // </div>
+        //  )
+    //  })
+
+     console.log('In ShelterShow shelter is:',  {shelteraddress})
+     console.log('shelter show', {sheltername})
     return(
-        <h2>hey</h2>
+        <div>
+            <h1>{sheltername}</h1>
+            <p> {shelteraddress} {sheltercity} {shelterphone}</p>
+        </div>
     )
    
     

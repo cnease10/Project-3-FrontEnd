@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {Button} from 'semantic-ui-react'
-import ShelterShow from '../ShelterShow';
+// import ShelterShow from '../ShelterShow';
 
 
 function ShelterList(props) {
@@ -10,7 +10,7 @@ function ShelterList(props) {
             <div>
             <ul>
                 <li key={shelter.id}>{shelter.name}</li>
-            
+                <Button onClick={() => props.shelterShow(shelter.id)}>Show me More</Button>
             </ul>
             </div>
         )
@@ -19,7 +19,7 @@ function ShelterList(props) {
     return (
         <div>
             <h3>Shelter List</h3>
-                <Button>{shelters}</Button>
+                {shelters}
         </div>
     )
 }

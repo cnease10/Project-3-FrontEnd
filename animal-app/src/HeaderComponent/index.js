@@ -1,6 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Header, List} from 'semantic-ui-react'
+import {Header, List,Button} from 'semantic-ui-react'
 import './headercomponent.css'
 
 
@@ -9,16 +8,16 @@ import './headercomponent.css'
 
 //put that cute paw icon outside of this list and inside of the header
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
     return (
         <Header>
                 <div class="header1">
             <List>
                 <List.Item>
-                    Home
+                    <Button onClick={props.back}>Home</Button>
                 </List.Item>
                 <List.Item>
-                   Shelters
+                   <Button onClick={props.shelter}>Shelters</Button>
                 </List.Item>
             </List>
             </div>

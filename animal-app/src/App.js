@@ -1,9 +1,9 @@
 import React from 'react';
-import HeaderComponent from './HeaderComponent'
+// import HeaderComponent from './HeaderComponent'
 // import HomeComponent from './HomeComponent'
 import MainComponent from './MainComponent'
 import './App.css';
-import FooterComponent from './FooterComponent';
+// import FooterComponent from './FooterComponent';
 // import {Route, Switch} from 'react-router-dom';
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
@@ -11,9 +11,9 @@ import FooterComponent from './FooterComponent';
 function App() {
   return (
     <main>
-      <HeaderComponent />
+      {/* <HeaderComponent /> */}
       <MainComponent />
-      <FooterComponent/>
+      {/* <FooterComponent/> */}
     </main>
   );
 }

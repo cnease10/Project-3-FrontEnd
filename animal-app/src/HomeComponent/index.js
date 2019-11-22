@@ -1,23 +1,22 @@
 import React from 'react'
-import {Grid, Segment} from 'semantic-ui-react'
+// import {Gri} from 'semantic-ui-react'
 import './homecomponent.css'
 
 
    
 const HomeComponent = () => {
     return(
-        <body>
-     <Grid>
-      <Grid.Row>
-        // <div class="text">
-        //     <h1>Animal Allies</h1>
-        //     </div>
+      
+      <body className="text">
+
+            <h1>Animal Allies</h1>
+           
+      </body>
         
 
                 
-        </Grid.Row>
-     </Grid>
- </body>
+        
+     
 
     )
 }
