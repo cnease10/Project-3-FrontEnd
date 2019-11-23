@@ -6,7 +6,6 @@ import ShelterList from '../ShelterList'
 import AddAnimal from '../AddAnimalForm'
 import EditAnimal from '../EditAnimalForm'
 import ShelterShow from '../ShelterShow';
-import FooterComponent from '../FooterComponent'
 import HeaderComponent from '../HeaderComponent'
 import { parse } from 'querystring';
 import { tsExpressionWithTypeArguments } from '@babel/types';
@@ -274,7 +273,7 @@ class MainComponent extends Component {
              {/* <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}*/} 
-            <FooterComponent fixed='bottom'/>  
+            
             </div> 
         )
     }
