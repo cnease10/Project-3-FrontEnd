@@ -1,54 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi');
-
-
 body {
-
  background: url(https://i.imgur.com/V3tgwg6.png);
  background-repeat: no-repeat;
  background-size: cover;
  text-align: center;
  color: black;
-
-
 }
-
-
 /*
 .text {
     text-align: center;
     margin: auto;
-
 }*/
-
 h1 {
   font-family: 'Alatsi', sans-serif;
 	font-size: 60px;
-	color: 	white;
+	color: 	#605a56;
     z-index: 1;
     position: relative;
     opacity: .5;
-  
 }
-
-
-
-/*.img {
-	    margin: auto;
-	   /* text-align: center;
-	    display: inline-block;*/
-	/*     height: 100%;
-  		width: 100%;
-  		display: flex;
-  		justify-content: center;
- 		 align-items: center;
+p {
+  font-family: 'Alatsi', sans-serif;
+  font-size: 30px;
+  color: #605a56;
+  opacity: .5;
 }
-*/
-
-
-
-/*@media only screen and (max-width: 600px) {
-  body {
-     background: url(https://i.imgur.com/NGIhwMB.png);
-
-  }*/
-/*}*/

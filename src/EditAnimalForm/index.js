@@ -5,9 +5,9 @@ import './editanimal.css'
 
 const EditDog = (props) => {
     return(
-        <Modal open={props.open}>
+        <Modal className="form" open={props.open}>
             <Header>Edit Animal</Header>
-            <div className="form">
+
             <Modal.Content>
                 <Form onSubmit={props.close}>
                     <Header as="h4">Name:</Header>
@@ -31,7 +31,7 @@ const EditDog = (props) => {
                     </Modal.Actions>
                 </Form>
             </Modal.Content>
-         </div>
+    
  </Modal>
 
 

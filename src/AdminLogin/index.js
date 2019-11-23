@@ -44,7 +44,7 @@ class Login extends Component {
     }
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form className="form" onSubmit={this.handleSubmit}>
                 <h4>Sign In</h4>
                 <Label>Email</Label>
                 <Form.Input type="email" name="email" onChange={this.handleChange} required/>

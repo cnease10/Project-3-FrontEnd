@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Rammetto+One');
-
-
 a {
   color: white;
   font-family: 'Alatsi', sans-serif;
   display: flex;
   flex-direction: column;
-  opacity: .5;
   font-size: 30px;
-
-
 }
