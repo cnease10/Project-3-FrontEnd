@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Rammetto+One');
-a {
+/* a {
   color: white;
   font-family: 'Alatsi', sans-serif;
   display: flex;
   flex-direction: column;
   font-size: 30px;
+} */
+.header {
+    background-color: #f2f3ee;
 }
+
+.ui.color1.button {
+    background-color: #f0e9e9;
+    color: #cb9b42;
+  }
+  /* #272343 */
+  .rightfloat {
+    float: right;
+  }

@@ -50,6 +50,7 @@ class MainComponent extends Component {
         // this.getAnimals();
         // this.showReal();
         // this.shelterSee();
+        this.gethomepage();
         this.getShelterAnimals();
     }
     gethomepage = () => {
@@ -270,9 +271,10 @@ class MainComponent extends Component {
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
             {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
-            {/* {this.state.adminlogged ? <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/> : null} */}
+             {/* <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
-            <FooterComponent />  
+            {/* {this.state.adminlogged ? : null}*/} 
+            <FooterComponent fixed='bottom'/>  
             </div> 
         )
     }

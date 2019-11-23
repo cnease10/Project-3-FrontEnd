@@ -10,9 +10,9 @@ import { Segment, Button} from 'semantic-ui-react'
 
 const FooterComponent = () => {
     return (
-        <Segment stacked>
-            <Button><Link to="/letmein">Admin</Link></Button>
-        </Segment>
+        // <Segment className="ui color5 segment">
+            <Button><Link className="ui color1 button" to="/letmein">Admin</Link></Button>
+        // </Segment>
     )
 }
 

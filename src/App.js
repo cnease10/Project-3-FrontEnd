@@ -9,12 +9,10 @@ import {Route, Switch} from 'react-router-dom';
 // import ShelterShow from './ShelterShow'
 import AdminLogin from './AdminLogin'
 
-const pStyle = {
-      backgroundColor: 'black',
-                          }
+
 function App() {
   return (
-    <main style={pStyle}>
+    <main >
       <Switch>
         <Route exact path ='/' component={MainComponent} />
         <Route exact path='/letmein' component={AdminLogin} />

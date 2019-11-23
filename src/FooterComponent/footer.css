@@ -1,0 +1,17 @@
+.position {
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+
+}
+
+
+.ui.color1.button {
+    background-color: #f0e9e9;
+    color: #cb9b42;
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+  }

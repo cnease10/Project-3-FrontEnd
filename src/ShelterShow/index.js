@@ -1,5 +1,6 @@
 import React from 'react'
-import {Button, Card, Image} from 'semantic-ui-react'
+import {Button, Card, Image, Grid} from 'semantic-ui-react'
+import './sheltershow.css'
 
 function ShelterShow(props) {
      const shelteraddress = props.new.address
@@ -29,6 +30,11 @@ function ShelterShow(props) {
      console.log('shelter show', {sheltername})
      const animals = props.animals.map((animal) => {
          return(
+            <Grid> 
+
+         
+            <Grid.Row >
+             <Grid.Column>
             <Card>
             <Image src={animal.photo} wrapped ui={false} />
             {/* <Card.Content>{animal.photo}</Card.Content> */}
@@ -47,37 +53,32 @@ function ShelterShow(props) {
             Gender: {animal.gender}
             </Card.Content>
             <Card.Content>
-            <Button onClick={() => props.openModal(animal)}>Edit Animal</Button>
-            <Button onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
             </Card.Content>
             </Card>
+            </Grid.Column>
+              
+            </Grid.Row>
+                
+               </Grid>
 
          )
      })
     return(
-        <div>
-            <h1>{sheltername}</h1>
+        <div className="animallist">
+           <div className="shelter">
+            <h1 className="homeh1">{sheltername}</h1>
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
-            <Button onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button>
-            {animals}        
+            <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button>
+           </div>
+            <Grid> 
+            {animals} 
+             </Grid>      
         </div>
     )
    
-    
-    // // .map((shelter) => {
-    // //     return(
-    // //         <p>{shelter[0]}</p>
-    // //     )
-    // // })
-    // console.log('In ShelterShow shelter is:',  shelter)
-    
-    // return(
-    //     <div>
-    //         <h2>Sup</h2>
-           
-    //     </div>
-    // )
 }
 
 export default ShelterShow

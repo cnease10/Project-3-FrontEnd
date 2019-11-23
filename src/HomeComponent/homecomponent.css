@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi');
 body {
- background: url(https://i.imgur.com/V3tgwg6.png);
+ background: url('https://images.unsplash.com/photo-1489440543286-a69330151c0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+ opacity: 0.8;
  background-repeat: no-repeat;
  background-size: cover;
  text-align: center;
  color: black;
 }
-/*
-.text {
-    text-align: center;
-    margin: auto;
-}*/
-h1 {
+
+.homeh1 {
   font-family: 'Alatsi', sans-serif;
-	font-size: 60px;
-	color: 	#605a56;
+  font-size: 60px;
+  color: #cb9b42;
     z-index: 1;
     position: relative;
-    opacity: .5;
 }
-p {
+/* .homep {
   font-family: 'Alatsi', sans-serif;
   font-size: 30px;
-  color: #605a56;
-  opacity: .5;
-}
+  color:  #6fb98f;
+
+} */
+/* 
+https://i.imgur.com/V3tgwg6.png */
+/* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
+/* https://images.unsplash.com/photo-1530258422663-6749b47598fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2872&q=80 */
