@@ -46,11 +46,11 @@ class Login extends Component {
         return (
             <Form className="form" onSubmit={this.handleSubmit}>
                 <h4>Sign In</h4>
-                <Label>Email</Label>
+                <Label className="ui colorone header">Email</Label>
                 <Form.Input type="email" name="email" onChange={this.handleChange} required/>
-                <Label>Password</Label>
+                <Label className="ui colorone header">Password</Label>
                 <Form.Input type="password" name="password" onChange={this.handleChange} required/>
-                <Button type="submit" color="green">Log In</Button>
+                <Button type="submit" className="ui color1 button">Log In</Button>
                 { this.state.errorMsg ? <Message negative>{this.state.errorMsg}</Message> : null}
             </Form>
         )

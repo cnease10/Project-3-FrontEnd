@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, Image, Grid} from 'semantic-ui-react'
+import {Button, Card, Image, Grid, Icon} from 'semantic-ui-react'
 import './sheltershow.css'
 
 function ShelterShow(props) {
@@ -32,8 +32,8 @@ function ShelterShow(props) {
             Gender: {animal.gender}
             </Card.Content>
             <Card.Content>
-            <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
-            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+            <Button className="ui color1 button" size="small"onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
+            <Button className="ui color1 button" size="small"onClick={() => props.deleteAnimal(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
             </Card.Content>
             </Card>
             </Grid.Column>
@@ -51,7 +51,7 @@ function ShelterShow(props) {
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
             {/* <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button> */}
-           <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}>Add An Animal</Button>
+           <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}> <Icon name='paw'/>Add An Animal</Button>
            </div>
             <Grid> 
             {animals} 
