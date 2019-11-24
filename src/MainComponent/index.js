@@ -7,8 +7,7 @@ import AddAnimal from '../AddAnimalForm'
 import EditAnimal from '../EditAnimalForm'
 import ShelterShow from '../ShelterShow';
 import HeaderComponent from '../HeaderComponent'
-import { parse } from 'querystring';
-import { tsExpressionWithTypeArguments } from '@babel/types';
+
 
 class MainComponent extends Component {
     constructor(props) {
@@ -271,7 +270,7 @@ class MainComponent extends Component {
             {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
              {/* <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
-            {/* <AddAnimal addAnimal={this.addAnimal}/> */}
+            <AddAnimal addAnimal={this.addAnimal}/>
             {/* {this.state.adminlogged ? : null}*/} 
             
             </div> 

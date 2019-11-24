@@ -20,7 +20,7 @@ const HeaderComponent = (props) => {
                     <Button className="ui color1 button" tabIndex onClick={props.animals} >Animals</Button>
                 </List.Item>
             </List>
-        <Button className="rightfloat"><Link className="ui color1 button" to="/letmein">Admin</Link></Button>
+            <Link className="ui color1 button rightfloat" to="/letmein">Admin</Link>
         </Header>
         </Container>
     )
