@@ -1,54 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi');
-
-
 body {
-
- background: url(https://i.imgur.com/V3tgwg6.png);
+ background: url('https://images.unsplash.com/photo-1489440543286-a69330151c0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
  background-repeat: no-repeat;
  background-size: cover;
  text-align: center;
  color: black;
-
-
 }
-
-
-/*
-.text {
-    text-align: center;
-    margin: auto;
-
-}*/
-
-h1 {
+.offcenter {
+  margin-left: 100px;
+}
+.reviews {
+  color: white;
+  background-color:rgba(203, 155, 66, .7);
+}
+.ui.colorfour.header.topspace {
+  color: gray;
+  /* padding-top: 50px; */
+  margin-top: 100px;
+  font-size: 30px;
+}
+.homeh1 {
   font-family: 'Alatsi', sans-serif;
-	font-size: 60px;
-	color: 	white;
+  font-size: 60px;
+  color: #cb9b42;
     z-index: 1;
     position: relative;
-    opacity: .5;
-  
 }
+/* .homep {
+  font-family: 'Alatsi', sans-serif;
+  font-size: 30px;
+  color:  #6fb98f;
 
-
-
-/*.img {
-	    margin: auto;
-	   /* text-align: center;
-	    display: inline-block;*/
-	/*     height: 100%;
-  		width: 100%;
-  		display: flex;
-  		justify-content: center;
- 		 align-items: center;
-}
-*/
-
-
-
-/*@media only screen and (max-width: 600px) {
-  body {
-     background: url(https://i.imgur.com/NGIhwMB.png);
-
-  }*/
-/*}*/
+} */
+/* 
+https://i.imgur.com/V3tgwg6.png */
+/* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
+/* https://images.unsplash.com/photo-1530258422663-6749b47598fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2872&q=80 */

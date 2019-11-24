@@ -1,37 +1,62 @@
 import React from 'react';
-import {Modal, Form, Button, Header} from 'semantic-ui-react';
+import {Modal, Form, Button, Header, Grid, TextArea, Icon} from 'semantic-ui-react';
 import './editanimal.css'
 
 
 const EditDog = (props) => {
     return(
-        <Modal open={props.open}>
+        <Modal className="form" open={props.open}>
             <Header>Edit Animal</Header>
-            <div className="form">
+
             <Modal.Content>
                 <Form onSubmit={props.close}>
-                    <Header as="h4">Name:</Header>
+                    <Grid>
+                        <Grid.Row columns={2}>
+                            <Grid.Column>
+                    <Header as="h2" className="ui colorone header" >Name:</Header>
                     <Form.Input type='text' name='name' value={props.animalEdit.name } onChange={props.handleEdit} />
-                    <Header as="h4">Breed:</Header>
+                   </Grid.Column>
+                   <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Breed:</Header>
                     <Form.Input type='text' name='breed' value={props.animalEdit.breed } onChange={props.handleEdit} />
-                    Shelter:
+                   </Grid.Column>
+                   <Grid.Row columns={2}>
+                       <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Shelter:</Header>
                     <Form.Input type='text' name='shelter' value={props.animalEdit.shelter } onChange={props.handleEdit} />
-                    Age:
+                    </Grid.Column>
+                    <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Age:</Header>
                     <Form.Input type='text' name='age' value={props.animalEdit.age } onChange={props.handleEdit} />
-                    Gender:
+                    </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row columns={2}>
+                        <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Gender:</Header>
                     <Form.Input type='text' name='gender' value={props.animalEdit.gender } onChange={props.handleEdit} />
-                    Photo:
+                   </Grid.Column>
+                   <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Photo:</Header>
                     <Form.Input type='text' name='photo' value={props.animalEdit.photo } onChange={props.handleEdit} />
-                    Description:
-                    <Form.Input type='text' name='description' value={props.animalEdit.description } onChange={props.handleEdit} />
+                   </Grid.Column>
+                    </Grid.Row>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                    <Header as="h2" className="ui colorone header">Description:</Header>
+                    <Form.Field control={TextArea} name='description' value={props.animalEdit.description } onChange={props.handleEdit} />
+                        </Grid.Column>
+                    </Grid.Row>
                     <Modal.Actions>
-                        <Button type='submit'>
-                            Edit Animal
+                        <Button className="ui color1 button" type='submit'>
+                            <Icon name="plus"/>Edit Animal
                         </Button>
+                        <Button className="ui color1 button" onClick={() => {props.back()}}> <Icon name="redo"/>Back</Button>
                     </Modal.Actions>
+                    </Grid>
                 </Form>
             </Modal.Content>
-         </div>
+    
  </Modal>
 
 

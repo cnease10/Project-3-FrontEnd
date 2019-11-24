@@ -1,18 +1,20 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import {Button, Image, Card} from 'semantic-ui-react'
+import {Button, Image, Card, Grid, Icon} from 'semantic-ui-react'
+import './animallist.css'
 
 function AnimalList(props) {
     const animals = props.animals.map((animal) => {
         return(
-            <div>
-                
+           <Grid> 
+
+         
+               <Grid.Row >
+                <Grid.Column>
+
+               
                 <Card>
                     <Image src={animal.photo} wrapped ui={false} />
-                    {/* <Card.Content>{animal.photo}</Card.Content> */}
-                    {/* <Card.Content>
-                    <img src={animal.photo} alt=""></img>
-                    </Card.Content> */}
                     <Card.Content>
                     <Card.Header>{animal.name}</Card.Header>
                     <Card.Meta>Breed: {animal.breed}</Card.Meta>
@@ -22,30 +24,34 @@ function AnimalList(props) {
                     </Card.Content>
                     <Card.Content extra>
                     Age: {animal.age} <br/>
-                    Gender: {animal.gender}
+                    Gender: {animal.gender} <br/>
+                    {/* Shelter: {animal.shelter} */}
                     </Card.Content>
                     <Card.Content>
-                    <Button onClick={() => props.openModal(animal)}>Edit Animal</Button>
-                    <Button onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+                    <Button size="small" className="ui color1 button" onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
+                    <Button size="small" className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
                     </Card.Content>
                     </Card>
-
-
-           
+                </Grid.Column>
+              
+            </Grid.Row>
                 
-           
-            </div>
+               </Grid>
+         
         )
     })
-      //need a button/link that shows more about the animal
-      //or we can just put all the info we need to show
-      //on the card of the dog
     return (
-        <div>
-        <h2>Animal List</h2>
-            {animals}
-        </div>
-    )
-}
+        
 
-export default AnimalList
+       <div className="animallist">
+        <Grid >
+
+            {animals}
+        </Grid>
+         </div> 
+        )
+    }
+    
+    export default AnimalList
+    
+   

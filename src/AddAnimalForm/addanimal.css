@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Rammetto+One');
 
-#addanimal {
-	background: brown;
+.addanimal {
+	background-color: #f2f3ee;
+	color: #cb9b42;
 }
 
+.ui.colorone.header {
+	color: #cb9b42;
+}
+
+.ui.colortwo.button {
+	background-color:  #cb9b42;
+	color: white;
+}
