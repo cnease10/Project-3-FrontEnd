@@ -7,24 +7,7 @@ function ShelterShow(props) {
      const sheltercity = props.new.city
      const sheltername = props.new.name
      const shelterphone = props.new.phone
-    //  const shelterpets = props.animals
-    //  .map((animal) => {
-    //      return(
-    //          <ul>
-    //              <li>{animal}</li>
-    //          </ul>
-    //      )
-    //  })
-    //  .map((shelter) => {
-        //  return(
-        // <div>
-        // <ul>
-        //     <li key={shelter.id}> {shelter.name} <br/> {shelter.address} <br/>  </li>
-            
-        // </ul>
-        // </div>
-        //  )
-    //  })
+    
 
      console.log('In ShelterShow shelter is:',  {shelteraddress})
      console.log('shelter show', {sheltername})
@@ -37,10 +20,6 @@ function ShelterShow(props) {
              <Grid.Column>
             <Card>
             <Image src={animal.photo} wrapped ui={false} />
-            {/* <Card.Content>{animal.photo}</Card.Content> */}
-            {/* <Card.Content>
-            <img src={animal.photo} alt=""></img>
-            </Card.Content> */}
             <Card.Content>
             <Card.Header>{animal.name}</Card.Header>
             <Card.Meta>Breed: {animal.breed}</Card.Meta>
@@ -54,7 +33,7 @@ function ShelterShow(props) {
             </Card.Content>
             <Card.Content>
             <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
-            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal)}>Adopt Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
             </Card.Content>
             </Card>
             </Grid.Column>

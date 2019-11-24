@@ -50,7 +50,7 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        // this.getShelterAnimals();
+        this.shelterShow();
     }
     gethomepage = () => {
         this.setState({
@@ -147,6 +147,7 @@ class MainComponent extends Component {
                     shelterpage: true
                 })
                 console.log('hitting add animal')
+                this.setState({ state: this.state });
             } else {
                 alert('we have an error')
             }
@@ -159,7 +160,8 @@ class MainComponent extends Component {
         this.setState({
             animalEdit: {
                 ...this.state.animalEdit, [e.currentTarget.name]: e.currentTarget.value
-            }
+            },
+          state: this.state 
         })
     }
     //open modal
@@ -195,8 +197,11 @@ class MainComponent extends Component {
             })
             this.setState({
                 animals: newAnimalArray,
-                showModal: false
+                showModal: false,
+                shelterpage: true,
             })
+            this.setState({ state: this.state });
+            this.shelterShow();
         } catch(err) {
             console.log(err)
         }
@@ -214,8 +219,10 @@ class MainComponent extends Component {
         if (deleteResponseParsed.status.code === 200) {
             this.setState({
                 animals: this.state.animals.filter((animal) => animal.id !== animalId),
-                showdelete: true
+                shelterpage: true,
+                
                 })
+                this.setState({ state: this.state });
         console.log('hitting delete after set state')
         } else {
             alert('there is an issue');
@@ -298,7 +305,8 @@ class MainComponent extends Component {
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.homepage ? <HomeComponent/> : null}
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
-            {this.state.shelterpage ? <ShelterShow back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals} allanimals={this.state.animals}/>: null }
+            {this.state.shelterpage ? <ShelterShow back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} 
+            shelterShow={this.shelterShow}shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals} allanimals={this.state.animals}/>: null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}  openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter}/> : null}
             {this.state.showModal ? <EditAnimal  back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
             {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} animals={this.state.animals} /> : null } 
