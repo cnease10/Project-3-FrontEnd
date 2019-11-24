@@ -53,8 +53,8 @@ function ShelterShow(props) {
             Gender: {animal.gender}
             </Card.Content>
             <Card.Content>
-            <Button className="ui color1 button" onClick={() => props.openModal(animal.id)}>Edit Animal</Button>
-            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal)}>Adopt Animal</Button>
             </Card.Content>
             </Card>
             </Grid.Column>
@@ -71,8 +71,8 @@ function ShelterShow(props) {
             <h1 className="homeh1">{sheltername}</h1>
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
-            <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button>
-           <Button className="ui color1 button" onClick={() => {props.addAnimal()}}>Add An Animal</Button>
+            {/* <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button> */}
+           <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}>Add An Animal</Button>
            </div>
             <Grid> 
             {animals} 

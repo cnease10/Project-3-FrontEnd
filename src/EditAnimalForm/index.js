@@ -51,6 +51,7 @@ const EditDog = (props) => {
                         <Button type='submit'>
                             Edit Animal
                         </Button>
+                        <Button onClick={() => {props.back()}}>Back</Button>
                     </Modal.Actions>
                     </Grid>
                 </Form>

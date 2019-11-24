@@ -50,7 +50,7 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        this.getShelterAnimals();
+        // this.getShelterAnimals();
     }
     gethomepage = () => {
         this.setState({
@@ -120,6 +120,13 @@ class MainComponent extends Component {
     }
    
     //CREATE ROUTE
+    openAnimalAdd = async() => {
+        this.setState({
+            addpage: true,
+            shelterpage: false
+        })
+        console.log('hitting open add')
+    }
     addAnimal = async(e, animalFromForm) => {
         e.preventDefault();
         try {
@@ -135,8 +142,11 @@ class MainComponent extends Component {
             if (parsedResponse.status.code === 200) {
                 this.setState({
                     animals: [...this.state.animals, parsedResponse.data],
-                    addpage: true
+                    shelteranimals: [...this.state.shelteranimals, parsedResponse.data],
+                    addpage: false,
+                    shelterpage: true
                 })
+                console.log('hitting add animal')
             } else {
                 alert('we have an error')
             }
@@ -206,6 +216,7 @@ class MainComponent extends Component {
                 animals: this.state.animals.filter((animal) => animal.id !== animalId),
                 showdelete: true
                 })
+        console.log('hitting delete after set state')
         } else {
             alert('there is an issue');
         }
@@ -287,10 +298,10 @@ class MainComponent extends Component {
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.homepage ? <HomeComponent/> : null}
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
-            {this.state.shelterpage ? <ShelterShow addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
-            {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
-            {this.state.showModal ? <EditAnimal  handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
-             {/* <AnimalList animals={this.state.animals} animalEdit={this.state.animalEdit} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
+            {this.state.shelterpage ? <ShelterShow back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals} allanimals={this.state.animals}/>: null }
+            {this.state.animalspage ? <AnimalList animals={this.state.animals}  openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter}/> : null}
+            {this.state.showModal ? <EditAnimal  back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
+            {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} animals={this.state.animals} /> : null } 
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}  */}
             
