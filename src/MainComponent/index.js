@@ -160,8 +160,7 @@ class MainComponent extends Component {
         this.setState({
             animalEdit: {
                 ...this.state.animalEdit, [e.currentTarget.name]: e.currentTarget.value
-            },
-          state: this.state 
+            }
         })
     }
     //open modal
@@ -267,8 +266,58 @@ class MainComponent extends Component {
             )}) 
         console.log(this.state.shelteranimals)
     }
-     //GET ONLY ANIMALS REALTED TO SHELTER
-    // getShelterAnimals = async(shelterid) => {
+     //DELETE AND SEE DELETION
+    deleteAndGetShelterAnimals = async(animalId) => {
+        console.log(animalId)
+        const deleteResponse = await fetch(process.env.REACT_APP_API_URL +'/api/v1/animals/' + animalId,  {
+            method: 'DELETE',
+            credentials: 'include'
+        });
+        const deleteResponseParsed = await deleteResponse.json();
+        console.log(deleteResponseParsed)
+        if (deleteResponseParsed.status.code === 200) {
+            this.setState({
+                shelteranimals: this.state.shelteranimals.filter((animal) => animal.id !== animalId),
+                shelterpage: true,
+                
+                })
+        console.log('hitting delete after set state')
+        } else {
+            alert('there is an issue');
+        }
+    }
+    editAndGetShelterAnimals = async(e) => {
+        e.preventDefault();
+
+        try{
+            const editResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/' + this.state.animalEdit.id, {
+                method: 'PUT',
+                body: JSON.stringify(this.state.animalEdit),
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const editResponseParsed = await editResponse.json();
+            const newAnimalArray = this.state.animals.map((animal) => {
+                if (animal.id === editResponseParsed.data.id) {
+                    animal = editResponseParsed.data
+                }
+                return animal;
+            })
+
+            this.setState({
+                animals: newAnimalArray,
+                showModal: false,
+                shelterpage: true,
+            })
+            this.setState({
+                shelteranimals: this.state.animals.filter((animal) => animal.shelter === editResponseParsed.data.shelter),
+            })
+        } catch(err) {
+            console.log(err)
+        }
+    }
     //     try {
     //         const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
     //             credentials: 'include',
@@ -305,10 +354,10 @@ class MainComponent extends Component {
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.homepage ? <HomeComponent/> : null}
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
-            {this.state.shelterpage ? <ShelterShow back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} 
+            {this.state.shelterpage ? <ShelterShow  deleteAndGet={this.deleteAndGetShelterAnimals} back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} 
             shelterShow={this.shelterShow}shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals} allanimals={this.state.animals}/>: null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}  openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter}/> : null}
-            {this.state.showModal ? <EditAnimal  back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
+            {this.state.showModal ? <EditAnimal shelterpage={this.state.shelterpage} editAndGet={this.editAndGetShelterAnimals} back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
             {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} animals={this.state.animals} /> : null } 
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}  */}
