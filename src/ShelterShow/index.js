@@ -53,7 +53,7 @@ function ShelterShow(props) {
             Gender: {animal.gender}
             </Card.Content>
             <Card.Content>
-            <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
+            <Button className="ui color1 button" onClick={() => props.openModal(animal.id)}>Edit Animal</Button>
             <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
             </Card.Content>
             </Card>

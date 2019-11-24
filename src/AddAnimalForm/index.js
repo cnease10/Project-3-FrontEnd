@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Header, Grid} from 'semantic-ui-react';
+import {Form, Button, Header, Grid, TextArea} from 'semantic-ui-react';
 import './addanimal.css'
 
 class AddAnimal extends Component {
@@ -57,7 +57,7 @@ class AddAnimal extends Component {
                     <Grid.Row >
                     <Grid.Column>
                     <Header as="h2" className="ui colorone header">Description:</Header>
-                    <Form.Input type="text" name='description' value={this.state.description} onChange={this.handleChange}/>
+                    <Form.Field control={TextArea} name='description' value={this.state.description} onChange={this.handleChange}/>
                     </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>

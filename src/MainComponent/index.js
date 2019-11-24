@@ -19,7 +19,7 @@ class MainComponent extends Component {
             shelters: [],
             //bring in animals from database & stick here
             animals: [],
-            
+            //lets us edit animal
             animalEdit: {
                 name: '',
                 breed: '',
@@ -29,11 +29,17 @@ class MainComponent extends Component {
                 photo: '',
                 description: ''
             },
+            //shows all animals
             animalspage: false,
+            //shows all shelters
             shelterspage: false,
+            //shows one shelter
             shelterpage: false,
+            //this is for grabbing one shelter
             newshelter: [],
+            //this is for grabbing all animals by shelter
             shelteranimals: [],
+
             //admin page
             adminlogged: false,
             addpage: false,
@@ -44,10 +50,6 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        // this.getShelters();
-        // this.getAnimals();
-        // this.showReal();
-        // this.shelterSee();
         this.gethomepage();
         this.getShelterAnimals();
     }
@@ -267,10 +269,11 @@ class MainComponent extends Component {
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.homepage ? <HomeComponent/> : null}
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
-            {this.state.shelterpage ? <ShelterShow shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
+            {this.state.shelterpage ? <ShelterShow openModal={this.openModal} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
-             {/* <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
-            <AddAnimal addAnimal={this.addAnimal}/>
+            {this.state.showModal ? <EditAnimal  handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
+             {/* <AnimalList animals={this.state.animals} animalEdit={this.state.animalEdit} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
+            {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}*/} 
             
             </div> 

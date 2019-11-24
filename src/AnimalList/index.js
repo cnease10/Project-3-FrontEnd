@@ -25,7 +25,7 @@ function AnimalList(props) {
                     <Card.Content extra>
                     Age: {animal.age} <br/>
                     Gender: {animal.gender} <br/>
-                    Shelter: {animal.shelter}
+                    {/* Shelter: {animal.shelter} */}
                     </Card.Content>
                     <Card.Content>
                     <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
@@ -54,20 +54,4 @@ function AnimalList(props) {
     
     export default AnimalList
     
-    //     <Grid>
-    //          <h2>Shelter Pets in Your Area</h2>
-    //          <Grid.Row columns={4}>
-    //   <Grid.Column>
-    //   {animals}
-    //   </Grid.Column>
-    //   <Grid.Column>
-    //     {animals}
-    //   </Grid.Column>
-    //   <Grid.Column>
-    //   {animals}
-    //   </Grid.Column>
-    //   <Grid.Column>
-    //   {animals}
-    //   </Grid.Column>
-    // </Grid.Row>
-    //         </Grid>
+   

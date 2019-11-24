@@ -8,6 +8,7 @@ import {Route, Switch} from 'react-router-dom';
 // import ShelterList from './ShelterList';
 // import ShelterShow from './ShelterShow'
 import AdminLogin from './AdminLogin'
+import HomeComponent from './HomeComponent';
 
 
 function App() {
