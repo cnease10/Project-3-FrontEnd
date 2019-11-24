@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Form, Label, Button, Message, Icon} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 import './adminlogin.css'
 
 class Login extends Component {
@@ -50,8 +51,9 @@ class Login extends Component {
                 <Form.Input type="email" name="email" onChange={this.handleChange} required/>
                 <Label className="ui colorthree header">Password</Label>
                 <Form.Input type="password" name="password" onChange={this.handleChange} required/>
-                <Button type="submit" className="ui color1 button"><Icon name="sign-in"/>Log In</Button>
+                <Button type="submit" className="ui color1 button"><Icon name="sign-in"/>Log In</Button> <br/>
                 { this.state.errorMsg ? <Message negative>{this.state.errorMsg}</Message> : null}
+                <Link className="ui color1 button" to="/">Oops, take me back!</Link>
             </Form>
         )
     }
