@@ -9,7 +9,21 @@
 .header {
     background-color: rgba(242, 243, 238, .5);
 }
-
+.centered {
+  position: absolute; 
+  top: 8px; 
+  left: 0; 
+  right: 0; 
+  left: 0; 
+  text-align: center; 
+  height: 100%; 
+  width: 100%; 
+  vertical-align: middle;
+  /* background-color: #f0e9e9; */
+  color: #cb9b42;
+  font-weight: bold;
+  font-size: 25px;
+}
 .ui.color1.button {
     background-color: #f0e9e9;
     color: #cb9b42;

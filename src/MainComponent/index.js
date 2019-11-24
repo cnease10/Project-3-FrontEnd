@@ -277,6 +277,7 @@ class MainComponent extends Component {
         console.log(deleteResponseParsed)
         if (deleteResponseParsed.status.code === 200) {
             this.setState({
+                animals: this.state.animals.filter((animal) => animal.id !== animalId),
                 shelteranimals: this.state.shelteranimals.filter((animal) => animal.id !== animalId),
                 shelterpage: true,
                 

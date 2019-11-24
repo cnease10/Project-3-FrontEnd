@@ -16,11 +16,10 @@ const HeaderComponent = (props) => {
                 <List.Item>
                    <Button  className="ui color1 button"  tabIndex onClick={props.shelter}><Icon name="heart"/>Shelters</Button>
                 </List.Item>
-                <List.Item > 
-                    <Button className="ui color1 button" tabIndex onClick={props.animals}><Icon name='paw'/>All Animals</Button>
-                </List.Item>
             </List>
+                {/* <Link className="centered">Animal Allies <Icon name='paw'/></Link>  */}
             <Link className="ui color1 button rightfloat" to="/letmein"><Icon name="user outline"/>Admin</Link>
+            
         </Header>
         </Container>
     )
