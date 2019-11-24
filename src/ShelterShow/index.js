@@ -72,6 +72,7 @@ function ShelterShow(props) {
             <p> {shelteraddress} {sheltercity} {shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
             <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button>
+           <Button className="ui color1 button" onClick={() => {props.addAnimal()}}>Add An Animal</Button>
            </div>
             <Grid> 
             {animals} 

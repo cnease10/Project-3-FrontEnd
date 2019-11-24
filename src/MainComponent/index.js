@@ -50,7 +50,6 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        this.gethomepage();
         this.getShelterAnimals();
     }
     gethomepage = () => {
@@ -229,52 +228,71 @@ class MainComponent extends Component {
             animalspage: false,
             newshelter: newResponse
         })
+        const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
+            credentials: 'include',
+            method: 'GET'
+        });
+        const parsedAnimals = await animals.json();
+        const newParsed = await parsedAnimals.data
+        
+        console.log(newParsed)
+        this.setState({
+            animals: parsedAnimals.data,
+            homepage: false,
+            shelterspage: false,
+            animalspage: false,
+
+            
+        })
+        this.setState({
+            shelteranimals: this.state.animals.filter((animal) => animal.shelter === shelterid
+            )}) 
+        console.log(this.state.shelteranimals)
     }
      //GET ONLY ANIMALS REALTED TO SHELTER
-    getShelterAnimals = async(shelterid) => {
-        try {
-            const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
-                credentials: 'include',
-                method: 'GET'
-            });
-            const parsedAnimals = await animals.json();
-            const newParsed = await parsedAnimals.data
+    // getShelterAnimals = async(shelterid) => {
+    //     try {
+    //         const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
+    //             credentials: 'include',
+    //             method: 'GET'
+    //         });
+    //         const parsedAnimals = await animals.json();
+    //         const newParsed = await parsedAnimals.data
             
-            console.log(newParsed)
-            this.setState({
-                animals: parsedAnimals.data,
-                homepage: false,
-                shelterspage: false,
-                animalspage: false,
+    //         console.log(newParsed)
+    //         this.setState({
+    //             animals: parsedAnimals.data,
+    //             homepage: false,
+    //             shelterspage: false,
+    //             animalspage: false,
 
                 
-            })
-            this.setState({
-                shelteranimals: this.state.animals.filter((animal) => animal.shelter === shelterid
-                )}) 
-            console.log(this.state.shelteranimals)
+    //         })
+    //         this.setState({
+    //             shelteranimals: this.state.animals.filter((animal) => animal.shelter === shelterid
+    //             )}) 
+    //         console.log(this.state.shelteranimals)
            
-        } catch(err) {
-            console.log(err)
-        }
-    }
+    //     } catch(err) {
+    //         console.log(err)
+    //     }
+    // }
 
   
     render() {
         console.log('rendering main component')
-        
         return(
 
             <div>
             <HeaderComponent shelter={this.getShelters} back={this.gethomepage} animals={this.getAnimals}/>
             {this.state.homepage ? <HomeComponent/> : null}
             {this.state.shelterspage ? <ShelterList  shelters={this.state.shelters} shelterShow={this.shelterShow} /> : null}
-            {this.state.shelterpage ? <ShelterShow openModal={this.openModal} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
+            {this.state.shelterpage ? <ShelterShow addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals}/> : null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}/> : null}
             {this.state.showModal ? <EditAnimal  handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
              {/* <AnimalList animals={this.state.animals} animalEdit={this.state.animalEdit} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>  */}
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
-            {/* {this.state.adminlogged ? : null}*/} 
+            {/* {this.state.adminlogged ? : null}  */}
             
             </div> 
         )
