@@ -1,6 +1,6 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import {Button, Grid} from 'semantic-ui-react'
+import {Button, Grid, Icon} from 'semantic-ui-react'
 import './shelterlist.css';
 
 
@@ -15,7 +15,7 @@ function ShelterList(props) {
              <Grid.Column>
            
                 <h1 className="homeh1" key={shelter.id}>{shelter.name}</h1>
-                <Button className="ui color1 button"  onClick={() => props.shelterShow(shelter.id)}>Show me More</Button>
+                <Button className="ui color1 button"  onClick={() => props.shelterShow(shelter.id)}><Icon name="thumbs up outline"/>Show me More</Button>
             
             </Grid.Column>
               
@@ -34,39 +34,4 @@ function ShelterList(props) {
 }
 
 export default ShelterList
-
-// import React, {Component} from 'react'
-// import {Link} from 'react-router-dom'
-// import {Button} from 'semantic-ui-react'
-// import ShelterShow from '../ShelterShow';
-
-
-
-//  class ShelterList extends Component {
-//      getshelter = () => {
-//           this.props.shelters.map((shelter) => {
-//              return(
-//                  <div>
-//                  <ul>
-//                      <li key={shelter.id}>{shelter.name}</li>
-//                      <Button onClick={() => this.props.shelterShow(shelter.id)}>Show Me More</Button>
-//                  </ul>
-//                  </div>
-//              )
-//          })
-//      }
-//     render() {
-//         return (
-//             <div>
-//                 <h3>Shelter List</h3>
-//                 {/* <Link to='./sheltershow/ + {shelter.id}'  >{shelters}</Link> */}
-//                 {this.getshelter}
-//                 <ShelterShow /> 
-//             </div>
-//         )
-//     }
-// }
-
-
-// export default ShelterList
 

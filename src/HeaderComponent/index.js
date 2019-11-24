@@ -14,7 +14,7 @@ const HeaderComponent = (props) => {
                     <Button className="ui color1 button"  tabIndex onClick={props.back}><Icon name="home"/>Home</Button>
                 </List.Item>
                 <List.Item>
-                   <Button  className="ui color1 button"  tabIndex onClick={props.shelter}><Icon name="building"/>Shelters</Button>
+                   <Button  className="ui color1 button"  tabIndex onClick={props.shelter}><Icon name="heart"/>Shelters</Button>
                 </List.Item>
                 <List.Item > 
                     <Button className="ui color1 button" tabIndex onClick={props.animals}><Icon name='paw'/>All Animals</Button>

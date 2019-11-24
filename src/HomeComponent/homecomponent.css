@@ -6,7 +6,19 @@ body {
  text-align: center;
  color: black;
 }
-
+.offcenter {
+  margin-left: 100px;
+}
+.reviews {
+  color: white;
+  background-color:rgba(203, 155, 66, .7);
+}
+.ui.colorfour.header.topspace {
+  color: gray;
+  /* padding-top: 50px; */
+  margin-top: 100px;
+  font-size: 30px;
+}
 .homeh1 {
   font-family: 'Alatsi', sans-serif;
   font-size: 60px;

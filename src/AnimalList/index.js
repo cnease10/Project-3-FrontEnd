@@ -1,6 +1,6 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import {Button, Image, Card, Grid} from 'semantic-ui-react'
+import {Button, Image, Card, Grid, Icon} from 'semantic-ui-react'
 import './animallist.css'
 
 function AnimalList(props) {
@@ -28,8 +28,8 @@ function AnimalList(props) {
                     {/* Shelter: {animal.shelter} */}
                     </Card.Content>
                     <Card.Content>
-                    <Button className="ui color1 button" onClick={() => props.openModal(animal)}>Edit Animal</Button>
-                    <Button className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}>Adopt Animal</Button>
+                    <Button size="small" className="ui color1 button" onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
+                    <Button size="small" className="ui color1 button" onClick={() => props.deleteAnimal(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
                     </Card.Content>
                     </Card>
                 </Grid.Column>

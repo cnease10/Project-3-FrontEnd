@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form, Label, Button, Message} from 'semantic-ui-react'
+import {Form, Label, Button, Message, Icon} from 'semantic-ui-react'
 import './adminlogin.css'
 
 class Login extends Component {
@@ -46,11 +46,11 @@ class Login extends Component {
         return (
             <Form className="form" onSubmit={this.handleSubmit}>
                 <h4>Sign In</h4>
-                <Label className="ui colorone header">Email</Label>
+                <Label className="ui colorthree header">Email</Label>
                 <Form.Input type="email" name="email" onChange={this.handleChange} required/>
-                <Label className="ui colorone header">Password</Label>
+                <Label className="ui colorthree header">Password</Label>
                 <Form.Input type="password" name="password" onChange={this.handleChange} required/>
-                <Button type="submit" className="ui color1 button">Log In</Button>
+                <Button type="submit" className="ui color1 button"><Icon name="sign-in"/>Log In</Button>
                 { this.state.errorMsg ? <Message negative>{this.state.errorMsg}</Message> : null}
             </Form>
         )

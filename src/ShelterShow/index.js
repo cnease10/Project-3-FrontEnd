@@ -48,7 +48,7 @@ function ShelterShow(props) {
         <div className="animallist">
            <div className="shelter">
             <h1 className="homeh1">{sheltername}</h1>
-            <p> {shelteraddress} {sheltercity} {shelterphone}</p>
+            <p> <Icon name='marker'/>{shelteraddress} {sheltercity} <Icon name="phone"/>{shelterphone}</p>
             {/* <section>{shelterpets}</section> */}
             {/* <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button> */}
            <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}> <Icon name='paw'/>Add An Animal</Button>

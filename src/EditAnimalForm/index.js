@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Form, Button, Header, Grid, TextArea} from 'semantic-ui-react';
+import {Modal, Form, Button, Header, Grid, TextArea, Icon} from 'semantic-ui-react';
 import './editanimal.css'
 
 
@@ -48,10 +48,10 @@ const EditDog = (props) => {
                         </Grid.Column>
                     </Grid.Row>
                     <Modal.Actions>
-                        <Button type='submit'>
-                            Edit Animal
+                        <Button className="ui color1 button" type='submit'>
+                            <Icon name="plus"/>Edit Animal
                         </Button>
-                        <Button onClick={() => {props.back()}}>Back</Button>
+                        <Button className="ui color1 button" onClick={() => {props.back()}}> <Icon name="redo"/>Back</Button>
                     </Modal.Actions>
                     </Grid>
                 </Form>
