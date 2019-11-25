@@ -4,12 +4,13 @@ import './editanimal.css'
 
 
 const EditDog = (props) => {
+
     return(
         <Modal className="form" open={props.open}>
             <Header>Edit Animal</Header>
 
             <Modal.Content>
-                <Form onSubmit={props.close}>
+                <Form onSubmit={props.editAndGet}>
                     <Grid>
                         <Grid.Row columns={2}>
                             <Grid.Column>

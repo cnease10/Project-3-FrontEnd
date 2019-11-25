@@ -33,7 +33,7 @@ function ShelterShow(props) {
             </Card.Content>
             <Card.Content>
             <Button className="ui color1 button" size="small"onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
-            <Button className="ui color1 button" size="small"onClick={() => props.deleteAnimal(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
+            <Button className="ui color1 button" size="small"onClick={() => props.deleteAndGet(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
             </Card.Content>
             </Card>
             </Grid.Column>

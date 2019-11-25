@@ -6,6 +6,10 @@ body {
  text-align: center;
  color: black;
 }
+a {
+  color: #555555;
+  font-weight: 500;
+}
 .offcenter {
   margin-left: 100px;
 }
@@ -26,12 +30,7 @@ body {
     z-index: 1;
     position: relative;
 }
-/* .homep {
-  font-family: 'Alatsi', sans-serif;
-  font-size: 30px;
-  color:  #6fb98f;
 
-} */
 /* 
 https://i.imgur.com/V3tgwg6.png */
 /* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */

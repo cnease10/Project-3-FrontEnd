@@ -53,7 +53,7 @@ class Login extends Component {
                 <Form.Input type="password" name="password" onChange={this.handleChange} required/>
                 <Button type="submit" className="ui color1 button"><Icon name="sign-in"/>Log In</Button> <br/>
                 { this.state.errorMsg ? <Message negative>{this.state.errorMsg}</Message> : null}
-                <Link className="ui color1 button" to="/">Oops, take me back!</Link>
+                <Link className="ui color1 button" to="/"><Icon name="arrow alternate circle left outline"/>Oops, take me back!</Link>
             </Form>
         )
     }
