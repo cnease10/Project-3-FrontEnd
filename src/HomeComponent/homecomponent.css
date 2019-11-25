@@ -61,34 +61,3 @@ a {
 https://i.imgur.com/V3tgwg6.png */
 /* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
 /* https://images.unsplash.com/photo-1530258422663-6749b47598fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2872&q=80 */
-created_shelter = Shelter.create(
-            name='Aurora Animal Shelter',
-            city='Denver',
-            address="3985 S. Grant St.",
-            phone="818-055-3121"
-
-        )
-        Shelter.create(
-             name='Doggie Days',
-            city='Denver',
-            address="3233 Middlesborough Blvd.",
-            phone="818-345-0199"
-        )
-        Shelter.create(
-             name='No Feline Left Behind',
-            city='Denver',
-            address="4242 Main St.",
-            phone="818-069-3125"
-        )
-        Shelter.create(
-             name='Animals For All',
-            city='Denver',
-            address="101 Main St.",
-            phone="818-217-8238"
-        )
-        Shelter.create(
-             name="Bennet's Birds",
-            city='Denver',
-            address="5965 Eagleway St.",
-            phone="867-5309"
-        )
