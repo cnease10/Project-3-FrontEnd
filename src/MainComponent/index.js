@@ -6,7 +6,7 @@ import AddAnimal from '../AddAnimalForm'
 import EditAnimal from '../EditAnimalForm'
 import ShelterShow from '../ShelterShow';
 import HeaderComponent from '../HeaderComponent'
-import AdminShelterShow from '../AdminShelterShow'
+
 
 
 class MainComponent extends Component {
