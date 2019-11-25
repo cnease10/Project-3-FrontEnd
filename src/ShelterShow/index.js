@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, Image, Grid, Icon, } from 'semantic-ui-react'
+import {Card, Image, Grid, Icon, Button } from 'semantic-ui-react'
 import './sheltershow.css'
 
 function ShelterShow(props) {
@@ -35,8 +35,12 @@ function ShelterShow(props) {
             </Card.Description>
             </Card.Content>
             <Card.Content>
-            <Button className="ui color1 button" size="small"onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
-            <Button className="ui color1 button" size="small"onClick={() => props.deleteAndGet(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
+            { props.adminlogged ? 
+              <React.Fragment>
+                 <Button className="ui color1 button" size="small"onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
+                <Button className="ui color1 button" size="small"onClick={() => props.deleteAndGet(animal.id)}><Icon name='heart outline'/>Adopt Animal</Button>
+              </React.Fragment> : null
+            }
             </Card.Content>
             </Card>
             </Grid.Column>
@@ -53,7 +57,9 @@ function ShelterShow(props) {
             
            <div className="shelter">
             <p> <Icon name='marker'/>{shelteraddress} {sheltercity} <Icon name="phone"/>{shelterphone}</p>
-           <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}> <Icon name='paw'/>Add An Animal</Button>
+            {props.adminlogged ? <React.Fragment>
+                <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}> <Icon name='paw'/>Add An Animal</Button>
+            </React.Fragment> : null}
            </div>
             <Grid> 
             {animals} 
