@@ -11,27 +11,84 @@ a {
   font-weight: 500;
 }
 .offcenter {
-  margin-left: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+  
 }
-.reviews {
-  color: white;
-  background-color:rgba(203, 155, 66, .7);
+.resources {
+  margin-top: 30px;
+}
+.ui.colorone.header.home {
+  color: #fafafa;
+  background-color: rgba(203, 155, 66, .6);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+  
+    
+}
+
+
+.ui.colorseven.resources {
+  color: #555555;
+  background-color: none;
 }
 .ui.colorfour.header.topspace {
   color: gray;
   /* padding-top: 50px; */
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
 }
 .homeh1 {
   font-family: 'Alatsi', sans-serif;
-  font-size: 60px;
+  font-size: 80px;
   color: #cb9b42;
     z-index: 1;
     position: relative;
 }
-
+.homeimg {
+  border-radius: 8px;
+  border: white 1px solid;
+}
+.ui.stat{
+  font-size: 35px;
+  color: black;
+  
+}
 /* 
 https://i.imgur.com/V3tgwg6.png */
 /* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
 /* https://images.unsplash.com/photo-1530258422663-6749b47598fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2872&q=80 */
+created_shelter = Shelter.create(
+            name='Aurora Animal Shelter',
+            city='Denver',
+            address="3985 S. Grant St.",
+            phone="818-055-3121"
+
+        )
+        Shelter.create(
+             name='Doggie Days',
+            city='Denver',
+            address="3233 Middlesborough Blvd.",
+            phone="818-345-0199"
+        )
+        Shelter.create(
+             name='No Feline Left Behind',
+            city='Denver',
+            address="4242 Main St.",
+            phone="818-069-3125"
+        )
+        Shelter.create(
+             name='Animals For All',
+            city='Denver',
+            address="101 Main St.",
+            phone="818-217-8238"
+        )
+        Shelter.create(
+             name="Bennet's Birds",
+            city='Denver',
+            address="5965 Eagleway St.",
+            phone="867-5309"
+        )

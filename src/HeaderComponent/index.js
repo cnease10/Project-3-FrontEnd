@@ -16,6 +16,9 @@ const HeaderComponent = (props) => {
                 <List.Item>
                    <Button  className="ui color1 button"  tabIndex onClick={props.shelter}><Icon name="heart"/>Shelters</Button>
                 </List.Item>
+                <List.Item>
+                <a className="ui color1 button" href="https://www.petfinder.com/"><Icon name="folder open"/>Resources</a> 
+                </List.Item>
             </List>
                 {/* <Link className="centered">Animal Allies <Icon name='paw'/></Link>  */}
             <Link className="ui color1 button rightfloat" to="/letmein"><Icon name="user outline"/>Admin</Link>

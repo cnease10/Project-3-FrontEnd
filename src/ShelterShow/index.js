@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, Image, Grid, Icon} from 'semantic-ui-react'
+import {Button, Card, Image, Grid, Icon, } from 'semantic-ui-react'
 import './sheltershow.css'
 
 function ShelterShow(props) {
@@ -18,18 +18,21 @@ function ShelterShow(props) {
          
             <Grid.Row >
              <Grid.Column>
-            <Card>
+            <Card raised>
             <Image src={animal.photo} wrapped ui={false} />
             <Card.Content>
-            <Card.Header>{animal.name}</Card.Header>
-            <Card.Meta>Breed: {animal.breed}</Card.Meta>
-            <Card.Description>
-            {animal.description}
+            <Card.Description className="biggerfont">
+            <Icon name="paw"/>Bio: <br/>
+            My name is {animal.name}. <br/>
+             {animal.description} <br/>
             </Card.Description>
             </Card.Content>
-            <Card.Content extra>
-            Age: {animal.age} <br/>
-            Gender: {animal.gender}
+            <Card.Content >
+            <Card.Description className="biggerfont">
+            Breed: {animal.breed} <br/>
+            Gender: {animal.gender} <br/>  
+            Age: {animal.age}
+            </Card.Description>
             </Card.Content>
             <Card.Content>
             <Button className="ui color1 button" size="small"onClick={() => props.openModal(animal)}><Icon name='edit outline'/>Edit Animal</Button>
@@ -46,11 +49,10 @@ function ShelterShow(props) {
      })
     return(
         <div className="animallist">
-           <div className="shelter">
             <h1 className="homeh1">{sheltername}</h1>
+            
+           <div className="shelter">
             <p> <Icon name='marker'/>{shelteraddress} {sheltercity} <Icon name="phone"/>{shelterphone}</p>
-            {/* <section>{shelterpets}</section> */}
-            {/* <Button className="ui color1 button" onClick={() => {props.shelteranimals(props.new.id)}}>Show me your pets</Button> */}
            <Button className="ui color1 button" onClick={() => {props.openAnimalAdd()}}> <Icon name='paw'/>Add An Animal</Button>
            </div>
             <Grid> 

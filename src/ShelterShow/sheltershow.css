@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Alatsi');
 .shelter {
     padding: 10px;
     margin: 10px;
@@ -7,3 +8,36 @@
 p {
     font-size: 25px;
 }
+
+.biggerfont {
+    font-size: 15px;
+    font-family: 'Alatsi', sans-serif;
+    font-weight: lighter;
+}
+
+.large.text.head {
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+}
+/* .aone {
+  margin-right: 10px;
+  float: right;
+}
+.atwo {
+    margin-right: 10px;
+    float: right;
+}
+.athree {
+    margin-right: 10px;
+    float: right;
+}
+.afour{
+    margin-right: 10px;
+    float: right;
+}
+.afive{
+    float: right;
+}
+.ui.colorone.header.sheltershow {
+    float: right;
+} */

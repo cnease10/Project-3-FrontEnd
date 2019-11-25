@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AnimalList from '../AnimalList'
-import {Grid} from 'semantic-ui-react'
 import HomeComponent from '../HomeComponent';
 import ShelterList from '../ShelterList'
 import AddAnimal from '../AddAnimalForm'
@@ -358,8 +357,8 @@ class MainComponent extends Component {
             {this.state.shelterpage ? <ShelterShow  deleteAndGet={this.deleteAndGetShelterAnimals} back={this.shelterShow} openAnimalAdd={this.openAnimalAdd} addAnimal={this.addAnimal} openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} 
             shelterShow={this.shelterShow}shelteranimals={this.getShelterAnimals} new={this.state.newshelter} animals={this.state.shelteranimals} allanimals={this.state.animals}/>: null }
             {this.state.animalspage ? <AnimalList animals={this.state.animals}  openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter}/> : null}
-            {this.state.showModal ? <EditAnimal shelterpage={this.state.shelterpage} editAndGet={this.editAndGetShelterAnimals} back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
-            {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} animals={this.state.animals} /> : null } 
+            {this.state.showModal ? <EditAnimal shelters={this.state.shelters} shelterpage={this.state.shelterpage} editAndGet={this.editAndGetShelterAnimals} back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
+            {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} shelters={this.state.shelters} animals={this.state.animals} /> : null } 
             {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}  */}
             
