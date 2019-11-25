@@ -31,7 +31,7 @@ const HomeComponent = () => {
             Miguel says:
           </h3>
           <p className="reviews">I never knew there were so many shelters in my area to choose from. <br/>
-          Thank you Animal Allies fo helping me make the best shelter decision!</p>
+          Thank you Animal Allies for helping me make the best shelter decision!</p>
         </div>
       </Grid.Column>
       <Grid.Column width={2}>
@@ -51,21 +51,6 @@ const HomeComponent = () => {
         <Image src='https://images.unsplash.com/photo-1513711819719-f60aeb32b10f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' />
       </Grid.Column>
       <Grid.Column width={10} >
-        {/* <h2 className="reviews">Don't believe us? See for yourself!</h2>
-        <div>
-          <h3 className="reviews">
-            Sarah Jean says:
-          </h3>
-          <p className="reviews">Animal Allies helped me find the cutest cat in my area!</p>
-        </div>
-        <br/>
-        <div>
-          <h3 className="reviews">
-            Miguel says:
-          </h3>
-          <p className="reviews">I never knew there were so many shelters in my area to choose from. <br/>
-          Thank you Animal Allies fo helping me make the best shelter decision!</p>
-        </div> */}
       </Grid.Column>
       <Grid.Column width={3}>
         <Image src='https://images.unsplash.com/photo-1545331137-93e08496d4f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' />
