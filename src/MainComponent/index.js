@@ -318,32 +318,6 @@ class MainComponent extends Component {
             console.log(err)
         }
     }
-    //     try {
-    //         const animals = await fetch(process.env.REACT_APP_API_URL + '/api/v1/animals/', {
-    //             credentials: 'include',
-    //             method: 'GET'
-    //         });
-    //         const parsedAnimals = await animals.json();
-    //         const newParsed = await parsedAnimals.data
-            
-    //         console.log(newParsed)
-    //         this.setState({
-    //             animals: parsedAnimals.data,
-    //             homepage: false,
-    //             shelterspage: false,
-    //             animalspage: false,
-
-                
-    //         })
-    //         this.setState({
-    //             shelteranimals: this.state.animals.filter((animal) => animal.shelter === shelterid
-    //             )}) 
-    //         console.log(this.state.shelteranimals)
-           
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
 
   
     render() {
@@ -359,7 +333,6 @@ class MainComponent extends Component {
             {this.state.animalspage ? <AnimalList animals={this.state.animals}  openModal={this.openModal} animalEdit={this.state.animalEdit} deleteAnimal={this.deleteAnimal} shelteranimals={this.getShelterAnimals} new={this.state.newshelter}/> : null}
             {this.state.showModal ? <EditAnimal shelters={this.state.shelters} shelterpage={this.state.shelterpage} editAndGet={this.editAndGetShelterAnimals} back={this.shelterShow} handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit} open={this.state.showModal} /> : null}
             {this.state.addpage ? <AddAnimal addAnimal={this.addAnimal} shelters={this.state.shelters} animals={this.state.animals} /> : null } 
-            {/* <AddAnimal addAnimal={this.addAnimal}/> */}
             {/* {this.state.adminlogged ? : null}  */}
             
             </div> 
@@ -368,24 +341,3 @@ class MainComponent extends Component {
 }
 
 export default MainComponent
-/// /* // <Grid columns={2} textAlign='center'>
-    //     <Grid.Row>
-    //        <HomeComponent/>  
-    //     </Grid.Row>
-    //    <Grid.Row>
-    //        <ShelterList shelterShow={this.shelterShow} shelters={this.state.shelters} shelterPage={this.state.shelterpage}  />
-    //    </Grid.Row>
-       
-    //        <ShelterShow selectShelter={this.state.newshelter}/>
-      
-    //     <Grid.Row>
-    //         <AnimalList animals={this.state.animals} openModal={this.openModal} deleteAnimal={this.deleteAnimal}/>
-    //     </Grid.Row>
-    //     <Grid.Row>
-    //         <AddAnimal addAnimal={this.addAnimal}/>
-    //     </Grid.Row>
-    //     <Grid.Row>
-    //         <EditAnimal handleEdit={this.handleEdit} close={this.close} animalEdit={this.state.animalEdit}
-    //         open={this.state.showModal} />
-    //     </Grid.Row>
-    // </Grid> */}

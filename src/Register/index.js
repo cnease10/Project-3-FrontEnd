@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
-import {Form, Label, Button, Message, Icon} from 'semantic-ui-react'
-import {Link} from 'react-router-dom'
-import './adminlogin.css'
+import {Form, Label, Button, Message} from 'semantic-ui-react'
 
-class Login extends Component {
+
+class Register extends Component {
     constructor() {
         super();
         this.state= {
             email: '',
-            password: '',
-            
+            password: ''
         }
     }
     //handle the form value change
@@ -19,10 +17,10 @@ class Login extends Component {
             [e.currentTarget.name]: e.currentTarget.value
         })
     }
-    //submit login form
+    //submit register form
     handleSubmit = async(e) => {
         e.preventDefault();
-        const loginResponse = await fetch(process.env.REACT_APP_API_URL +'/api/v1/admins/login', {
+        const registerResponse = await fetch(process.env.REACT_APP_API_URL +'/api/v1/admins/register',  {
             method: 'POST',
             body: JSON.stringify(this.state),
             credentials: 'include', //send a sesion cookie along with req
@@ -30,7 +28,7 @@ class Login extends Component {
                 'Content-Type': 'application/json'
             }
         });
-        const parsedResponse = await loginResponse.json();
+        const parsedResponse = await registerResponse.json();
 
         //validation
         if (parsedResponse.status.code === 200) {
@@ -46,17 +44,16 @@ class Login extends Component {
     render() {
         return (
             <Form className="form" onSubmit={this.handleSubmit}>
-                <h4>Sign In</h4>
-                <Label className="ui colorthree header">Email</Label>
+                <h4>Register New User</h4>
+                <Label  className="ui colorthree header">Email</Label>
                 <Form.Input type="email" name="email" onChange={this.handleChange} required/>
-                <Label className="ui colorthree header">Password</Label>
+                <Label  className="ui colorthree header">Password</Label>
                 <Form.Input type="password" name="password" onChange={this.handleChange} required/>
-                <Button type="submit" className="ui color1 button"><Icon name="sign-in"/>Log In</Button> <br/>
+                <Button type="submit" className="ui color1 button">Sign Up</Button>
                 { this.state.errorMsg ? <Message negative>{this.state.errorMsg}</Message> : null}
-                <Link className="ui color1 button" to="/"><Icon name="arrow alternate circle left outline"/>Oops, take me back!</Link>
             </Form>
         )
     }
 }
 
-export default Login
+export default Register

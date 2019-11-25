@@ -1,0 +1,14 @@
+.form {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 60px;
+    }
+
+
+    .ui.colorthree.header {
+        color: #cb9b42;
+        background-color: #f0e9e9;
+        
+
+    }
