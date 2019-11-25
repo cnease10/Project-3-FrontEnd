@@ -13,15 +13,25 @@ a {
 .offcenter {
   margin-left: 100px;
 }
-.reviews {
+/* .reviews {
   color: white;
   background-color:rgba(203, 155, 66, .7);
+} */
+.ui.colorone.header.home {
+  color: #fafafa;
+  background-color: rgba(203, 155, 66, .6);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    
 }
 .ui.colorfour.header.topspace {
   color: gray;
   /* padding-top: 50px; */
   margin-top: 100px;
   font-size: 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
 }
 .homeh1 {
   font-family: 'Alatsi', sans-serif;
@@ -30,7 +40,14 @@ a {
     z-index: 1;
     position: relative;
 }
-
+.homeimg {
+  border-radius: 8px;
+}
+.ui.stat{
+  font-size: 35px;
+  color: black;
+  
+}
 /* 
 https://i.imgur.com/V3tgwg6.png */
 /* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
