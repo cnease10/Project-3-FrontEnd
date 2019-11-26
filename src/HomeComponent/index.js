@@ -16,20 +16,20 @@ const HomeComponent = () => {
         <Grid.Column width={10}>
           <h1 className="homeh1 offcenter">Animal Allies<Icon name="paw"/></h1>
           <Header as="h1"  className="ui colorfour header topspace" > Here to help you find the perfect pet</Header>
-          <Divider horizontal></Divider>
-            <Statistic.Group widths='three'>
+          {/* <Divider horizontal></Divider> */}
+            <Statistic.Group widths='three' className="stat background">
               <Statistic>
               <Statistic.Value><Icon name="paw"/>50,000</Statistic.Value>
                 <p className="ui stat " >Rescues</p>
               </Statistic>
 
               <Statistic> 
-              <Statistic.Value text>
+              <Statistic.Value text className="space">
                 Thirty
                 <br />
                 Thousand
               </Statistic.Value>
-                <p className="ui stat ">Adoptions</p>
+                <p className="ui stat space ">Adoptions</p>
               </Statistic>
 
               <Statistic>
@@ -37,7 +37,7 @@ const HomeComponent = () => {
                 <Icon name="heart"/> 368 
                 <br/>
               </Statistic.Value>
-               <p className="ui stat ">Partner Shelters</p>
+               <p className="ui stat space ">Partner Shelters</p>
               </Statistic>
               </Statistic.Group>
         </Grid.Column>

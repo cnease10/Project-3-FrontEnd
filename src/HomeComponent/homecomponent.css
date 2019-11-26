@@ -7,30 +7,82 @@ body {
  color: black;
 }
 
- /* @media screen and (min-width: 0px) and (max-width: 959) {
- .homeimg {
-   display: none;
-  border-radius: 8px;
-  border: white 1px solid;
-}
-}  */
-/* @media screen and (min-width: 960) and (max-width: 1024) {
- 
-}  */
+ @media screen and (min-width: 0px)  {
+  .homeh1 {
+    font-family: 'Alatsi', sans-serif;
+    color: #cb9b42;
+      z-index: 1;
+      position: relative;
+  }
+  .ui.colorfour.header.topspace {
+    color: black;
+    /* padding-top: 50px; */
+    /* margin-top: 50px; */
+    font-size: 20px;
+    border-radius: 8px;
+    /* margin-bottom: 40px; */
+  }
+  .ui.stat{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+    /* background-color: rgba(242,243,238, .5); */
+    border-radius: 8px;
+    
+  }
+  .ui.stat.space{
+    margin-left: 20px;
+  }
+  .space {
+    margin-left: 20px;
+  }
+  .stat.background {
+    background-color: rgba(242,243,238, .5);
 
-.homeimg {
+  }
+} 
+
+@media screen and (min-width: 960) {
+  .offcenter {
+    margin-top: 50px;
+    margin-left: 50px;
+    
+  }
+  .ui.colorfour.header.topspace {
+    color: gray;
+    /* padding-top: 50px; */
+    margin-top: 50px;
+    font-size: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+  .homeh1 {
+    font-family: 'Alatsi', sans-serif;
+    font-size: 80px;
+    color: #cb9b42;
+      z-index: 1;
+      position: relative;
+  }
+  .ui.stat{
+    font-size: 35px;
+    color: black;
+    
+  }
+}
+
+/* .homeimg {
  border-radius: 8px;
  border: white 1px solid;
-}
+} */
 a {
   color: #555555;
   font-weight: 500;
 }
-.offcenter {
+/* .offcenter {
   margin-top: 50px;
   margin-left: 50px;
   
-}
+} */
 .resources {
   margin-top: 30px;
 }
@@ -45,28 +97,28 @@ a {
 }
 
 
-.ui.colorseven.resources {
+/* .ui.colorseven.resources {
   color: #555555;
   background-color: none;
-}
-.ui.colorfour.header.topspace {
+} */
+/* .ui.colorfour.header.topspace {
   color: gray;
   /* padding-top: 50px; */
-  margin-top: 50px;
+  /* margin-top: 50px;
   font-size: 30px;
   border-radius: 8px;
   margin-bottom: 40px;
-}
-.homeh1 {
+} */ 
+/* .homeh1 {
   font-family: 'Alatsi', sans-serif;
   font-size: 80px;
   color: #cb9b42;
     z-index: 1;
     position: relative;
-}
+} */
 
-.ui.stat{
+/* .ui.stat{
   font-size: 35px;
   color: black;
   
-}
+} */
