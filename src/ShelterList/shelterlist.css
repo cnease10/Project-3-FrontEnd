@@ -1,10 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi');
-.shelterlisth1 {
-    /* background-color: rgb(203, 155, 66); */
-    font-size: 25px;
-    font-weight: bold;
-    /* color: #f0e9e9; */
-    color: #cb9b42;
-    border-radius: 5px;
-    font-family: 'Alatsi', sans-serif;
+
+@media screen and (min-width: 0px)  {
+    .shelterlisth1 {
+        /* background-color: rgb(203, 155, 66); */
+        font-size: 25px;
+        /* background-color: rgba(242,243,238, .5); */
+        font-weight: bold;
+        /* color: #f0e9e9; */
+        color: #cb9b42;
+        
+        font-family: 'Alatsi', sans-serif;
+    }
+    /* .ui.color1.button.shelterlisth {
+        size: 10px;
+    } */
+}
+@media screen and (min-width: 960px) {
+    .shelterlisth1 {
+        /* background-color: rgb(203, 155, 66); */
+        font-size: 25px;
+        font-weight: bold;
+        /* color: #f0e9e9; */
+        color: #cb9b42;
+        border-radius: 5px;
+        font-family: 'Alatsi', sans-serif;
+    }
 }

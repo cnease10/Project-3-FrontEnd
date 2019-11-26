@@ -16,7 +16,7 @@ const HomeComponent = () => {
         <Grid.Column width={10}>
           <h1 className="homeh1 offcenter">Animal Allies<Icon name="paw"/></h1>
           <Header as="h1"  className="ui colorfour header topspace" > Here to help you find the perfect pet</Header>
-          {/* <Divider horizontal></Divider> */}
+          <Divider horizontal></Divider>
             <Statistic.Group widths='three' className="stat background">
               <Statistic>
               <Statistic.Value><Icon name="paw"/>50,000</Statistic.Value>

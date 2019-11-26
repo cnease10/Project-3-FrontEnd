@@ -8,14 +8,14 @@ import './shelterlist.css';
 function ShelterList(props) {
     const shelters = props.shelters.map((shelter) => {
         return(
-            <Grid columns={2}> 
+            <Grid columns={1}> 
 
          
             <Grid.Row >
              <Grid.Column>
            
                 <h1  className="shelterlisth1" key={shelter.id}>{shelter.name}</h1>
-                <Button className="ui color1 button"  onClick={() => props.shelterShow(shelter.id)}><Icon name="thumbs up outline"/>Show me More</Button>
+                <Button className="ui color1 button shelterlist"  onClick={() => props.shelterShow(shelter.id)}><Icon name="thumbs up outline"/>Show me More</Button>
             
             </Grid.Column>
               
@@ -26,7 +26,7 @@ function ShelterList(props) {
     })
    
     return (
-        <Grid columns={3}>
+        <Grid columns={2}>
            
                 {shelters}
         </Grid>
