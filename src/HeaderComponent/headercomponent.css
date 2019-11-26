@@ -6,12 +6,7 @@
     width: 100%;
   }
 }
-/* @media screen and (max-width: 600px) {
-   .nav.header > .nav.list > .nav.item > .ui.color1.button  {
-    float: none;
-    width: 100%;
-  }
-} */
+
 @media screen and (min-width: 960px) {
   .nav.header {
     text-align: left;

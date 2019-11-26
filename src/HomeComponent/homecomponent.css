@@ -6,6 +6,22 @@ body {
  text-align: center;
  color: black;
 }
+
+ /* @media screen and (min-width: 0px) and (max-width: 959) {
+ .homeimg {
+   display: none;
+  border-radius: 8px;
+  border: white 1px solid;
+}
+}  */
+/* @media screen and (min-width: 960) and (max-width: 1024) {
+ 
+}  */
+
+.homeimg {
+ border-radius: 8px;
+ border: white 1px solid;
+}
 a {
   color: #555555;
   font-weight: 500;
@@ -48,16 +64,9 @@ a {
     z-index: 1;
     position: relative;
 }
-.homeimg {
-  border-radius: 8px;
-  border: white 1px solid;
-}
+
 .ui.stat{
   font-size: 35px;
   color: black;
   
 }
-/* 
-https://i.imgur.com/V3tgwg6.png */
-/* https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 */
-/* https://images.unsplash.com/photo-1530258422663-6749b47598fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2872&q=80 */

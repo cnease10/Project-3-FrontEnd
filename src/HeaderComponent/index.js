@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header, Container, List, Button, Icon} from 'semantic-ui-react'
+import {Header, List, Button, Icon} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import './headercomponent.css'
 //functional / show only component that will be at the
