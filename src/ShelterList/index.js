@@ -8,10 +8,10 @@ import './shelterlist.css';
 function ShelterList(props) {
     const shelters = props.shelters.map((shelter) => {
         return(
-            <Grid columns={1}> 
+            <Grid columns={1}  className="shelterlistcolor"> 
 
          
-            <Grid.Row >
+            <Grid.Row>
              <Grid.Column>
            
                 <h1  className="shelterlisth1" key={shelter.id}>{shelter.name}</h1>
@@ -26,7 +26,7 @@ function ShelterList(props) {
     })
    
     return (
-        <Grid columns={2}>
+        <Grid columns={1} >
            
                 {shelters}
         </Grid>
