@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Rammetto+One');
 
+@media screen and (max-width: 600px) {
+  .header a  {
+    float: none;
+    width: 100%;
+  }
+}
+/* @media screen and (max-width: 600px) {
+   .nav.header > .nav.list > .nav.item > .ui.color1.button  {
+    float: none;
+    width: 100%;
+  }
+} */
+@media screen and (min-width: 960px) {
+  .nav.header {
+    text-align: left;
+  } 
+   
+}
 .header {
     background-color: rgba(242, 243, 238, .5);
 }

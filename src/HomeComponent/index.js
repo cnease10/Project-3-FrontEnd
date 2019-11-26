@@ -54,13 +54,13 @@ const HomeComponent = () => {
 
     <Grid.Row>
       <Grid.Column width={3}>
-        <Image className="homeimg"src='https://images.unsplash.com/photo-1513711819719-f60aeb32b10f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' />
+        {/* <Image className="homeimg"src='https://images.unsplash.com/photo-1513711819719-f60aeb32b10f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' /> */}
       </Grid.Column>
       <Grid.Column width={10} >
         
       </Grid.Column>
       <Grid.Column width={3}>
-        <Image className="homeimg" src='https://images.unsplash.com/photo-1526377242861-e4d7afe69623?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1046&q=80' />
+        {/* <Image className="homeimg" src='https://images.unsplash.com/photo-1526377242861-e4d7afe69623?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1046&q=80' /> */}
       </Grid.Column>
     </Grid.Row>
   </Grid>
