@@ -90,7 +90,8 @@ class MainComponent extends Component {
                 shelterspage: true,
                 homepage: false,
                 shelterpage: false, 
-                animalspage: false
+                animalspage: false,
+                addpage: false,
             })
             console.log('hitting route')
             this.getadminpage();
