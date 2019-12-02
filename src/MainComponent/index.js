@@ -51,7 +51,7 @@ class MainComponent extends Component {
         }
     }
     componentDidMount() {
-        this.shelterShow();
+        // this.shelterShow();
     }
 
     gethomepage = () => {
