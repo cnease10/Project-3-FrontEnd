@@ -52,8 +52,8 @@ class MainComponent extends Component {
     }
     componentDidMount() {
         this.shelterShow();
-        // this.getadminpage();
     }
+
     gethomepage = () => {
         this.setState({
             homepage: true,
@@ -320,10 +320,12 @@ class MainComponent extends Component {
                 animals: newAnimalArray,
                 showModal: false,
                 shelterpage: true,
+                
             })
             this.setState({
                 shelteranimals: this.state.animals.filter((animal) => animal.shelter === editResponseParsed.data.shelter),
             })
+            this.shelterShow();
             this.getadminpage();
         } catch(err) {
             console.log(err)
