@@ -25,7 +25,7 @@ class App extends Component {
         <Switch>
           <Route exact path ='/' render={(props) => <MainComponent {...props} adminlogged={this.state.loggedIn}/>}/>
           <Route exact path='/letmein'  render={(props) => <AdminLogin {...props} logIn={this.logIn}/>}/>
-          <Route exact path ='/register' component={Register} />
+          <Route exact path ='/getadminregistered' component={Register} />
         </Switch>
       </main>
     )
