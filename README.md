@@ -1,3 +1,5 @@
+This is hosted on Heroku here https://react-animal-allies-app.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
